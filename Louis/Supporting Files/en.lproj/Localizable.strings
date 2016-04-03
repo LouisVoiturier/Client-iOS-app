@@ -1,0 +1,311 @@
+/*
+ Localizable.strings
+ Louis
+ 
+ Created by Giang Christian on 25/09/2015.
+ Copyright (c) 2015 Louis. All rights reserved.
+ */
+
+"UIApplicationShortcutItemTitle-RequestValet" = "Request a valet";
+
+//Menu
+"Menu-Home"="Book a valet";
+"Menu-Profile"="Profile";
+"Menu-Vehicles"="Cars";
+"Menu-Payment"="Payment";
+"Menu-Meetings"="Rides";
+"Menu-Coupons"="Promo code";
+"Menu-Help"="Support";
+"Menu-CGV"="Terms of Service";
+"Menu-Legals"="Legal";
+
+
+// URL pour afficher les CGV, Aide, Mentions Légales
+// Apple n'accepte que du httpS (et pas http) dans WebView
+"URL-Help"="https://fierce-spire-6248.herokuapp.com/api/aide";
+"URL-CGV"="https://fierce-spire-6248.herokuapp.com/api/CGV";
+"URL-Legals"="https://fierce-spire-6248.herokuapp.com/api/mentions-legales";
+
+
+// Welcome
+"Welcome-SignUp-Button-Title" = "Sign Up";
+"Welcome-SignIn-TitlePart1" = "Already an account ? ";
+"Welcome-SignIn-TitlePart2Underline" = "Sign In !";
+
+
+//Sign In, Sign Up
+"Sign-In-Title" = "SIGN IN";
+"Sign-Up-Title" = "SIGN UP";
+
+"Sign-Email-Label"="Email";
+"Sign-Email-TextField"="name@domain.com";
+"Sign-Pwd-Label"="Password";
+"Sign-Pwd-TextField"="6 characters minimum";
+"Sign-PwdConfirm-Label"="Confirm password";
+"Sign-PwdConfirm-TextField"="6 characters minimum";
+
+"SignIn-Button-Title"="Sign In";
+"SignUp-Button-Title"="Sign Up";
+"SignUp-Button-Record"="Next";
+
+"SignIn-ForgottenPwd-Button" = "Forgot password ?";
+
+"SignUp-Check-Email" = "Email address invalid";
+"SignUp-Check-Email-Format" = "Email format maust be name@domain.com";
+
+"SignUp-Check-Pwd" = "Password invalid";
+"SignUp-Check-Pwd-MinSize" = "Password must have at least 6 characters";
+"SignUp-Check-Pwd-ReEntry" = "Passwords don't match";
+
+
+// Sign Up Profile
+"SignUpProfile-Button-Title"="Save";
+"SignUpProfile-CarHeaderTitle"="Your car";
+"SignUpProfile-AddPicture"="Add a picture";
+"SignUpProfile-ChoosePicture"="Select in the gallery";
+"SignUpProfile-TakePicture"="Take a picture";
+
+
+"SignUpProfile-Check-Firstname-ErrMsg"="Firstname too short";
+"SignUpProfile-Check-Lastname-ErrMsg"="Lastname too short";
+"SignUpProfile-Check-PhoneNumber-ErrMsg" ="Phone number invalid";
+"SignUpProfile-Check-VehiculeBrand-ErrMsg"="Car's brand empty";
+"SignUpProfile-Check-VehiculeModel-ErrMsg"="Car's model empty";
+"SignUpProfile-Check-VehiculeColor-ErrMsg"="Car's color empty";
+"SignUpProfile-Check-Multiple-Error"="Please correct red fields";
+
+"SignUpProfile-UIView-Picker-Button-Done" = "Done";
+
+"SignUp-AddPayment-Later" = "Later";
+"SignUp-AddCard-Warning-Title" = "Add your payment info";
+"SignUp-AddCard-Warning-Msg" = "Your card will be charged only if a valet take your car";
+"SignUp-AddPayment-WelcomeMsg"="Welcome";
+
+
+//Profil
+"Profile-Title"="PROFILE";
+"Profile-Edit-Label"="Edit";
+"Profile-FirstName-Label" = "Firstname";
+"Profile-LastName-Label" = "Lastname";
+"Profile-PhoneNumber-Label" = "Phone number";
+"Profile-FirstName-PlaceHolder" = "";
+"Profile-LastName-PlaceHolder" = "";
+"Profile-PhoneNumber-Placeholder" = "+33";
+
+"Profile-Button-Modify"="Edit";
+
+"ProfileSetup-SaveChange-Confirm-Title" = "Edit";
+"ProfileSetup-SaveChange-Confirm-Msg" = "Do you want to save your modifications ?";
+
+"ProfileSetup-DiscardAllChange-Confirm-Title" = "Cancel";
+"ProfileSetup-DiscardAllChange-Confirm-Msg" = "Do you want to cancel your modofications ?";
+
+
+"Profile-Disconnect-Button" = "To disconnect";
+"Profile-Disconnect-Confirm-Title"="Disconnect";
+"Profile-Disconnect-Confirm-Msg"="Do you want to disconnect ?";
+
+
+//Profil Setup (modify)
+"ProfileSetup-Title"="EDIT MY PROFILE";
+"ProfileSetup-Change-Picture"="Change my picture";
+"ProfileSetup-Button-Save"="Save";
+
+
+//Profil Change Passeword
+"Profile-ChangePwd-Title"="NEW PASSWORD";
+"Profile-ChangePwd-Record" = "Save";
+
+"Profile-ChangePwd-CurrentPwd-Label"="Current password";
+"Profile-ChangePwd-CurrentPwd-PlaceHolder"="6 characters minimum";
+"Profile-ChangePwd-NewPwd-Label"="New password";
+"Profile-ChangePwd-NewPwd-PlaceHolder"="6 characters minimum";
+"Profile-ChangePwd-NewPwdConfirm-Label"="Confirm new password";
+"Profile-ChangePwd-NewPwdConfirm-PlaceHolder"="6 characters minimum";
+
+
+"Profile-ChangePwd-CurrentPwd"="Current password invalid";
+"Profile-ChangePwd-Pwd-MinSize"="New password must have at least 6 characters";
+"Profile-ChangePwd-NewPwd-Confirm"="New passwords don't match";
+
+// Geoloc forbidden
+"Geoloc-AlertInfo-Title"="Almost done !";
+"Geoloc-AlertInfo-Msg"="To use the app, you must allow it to access your location.";
+"Geoloc-Setting-Button"="Go to Settings";
+
+
+// Home strings
+"Home-BookButton-Book"="Book a valet now";
+"Home-BookButton-Confirm"="Confirm booking";
+"Home-BookButton-AskForReturn"="Get my car back";
+"Home-BookButton-SubmitPicker"="Select";
+"Home-OffZone-Text"="Selected address is out of the service area";
+"Home-Description-Hours"="Hours";
+"Home-Description-Prices"="Price";
+"Home-Description-ClosingHour"="Closing hour";
+"Home-Description-TimePast"="Time past";
+"Home-PinLabel-RDV"="Meeting place";
+
+
+// Home Alerts
+"Home-AlertView-Title-NoCards"="No credit card saved";
+"Home-AlertView-Description-NoCards"="Do you want to register a credit card to book a valet ?";
+
+
+// Home Bottom Table View
+"Home-Bottom-Table-SectionHeader"="Check and confirm your booking";
+"Home-Bottom-Table-NoVehicle"="No car";
+"Home-Bottom-Table-NoCards"="No credit card";
+"Home-Bottom-Table-CellTitle-Vehicle"="Car";
+"Home-Bottom-Table-CellTitle-Card"="Credit card";
+"Home-Bottom-Table-CellTitle-Price"="Price";
+
+
+// Security Code
+"SecurityCode-Description"="Security code";
+
+
+// Research popup view
+"ResearchPopup-BotText-Searching"="Searching for a valet...";
+"ResearchPopup-BotText-Found"="Reservation confirmed !";
+"ResearchPopup-BotText-NotFound"="Please retry later";
+"ResearchPopup-BotText-AddVehicle"="Adding a car...";
+"ResearchPopup-BotText-AddPayment"="Adding a credit card...";
+"ResearchPopup-TopText-NotFound"="Sorry, our valets are busy.";
+
+
+// Horaire du service
+"Home-HourService-WeekDay-1"="Sunday";
+"Home-HourService-WeekDay-2"="Monday";
+"Home-HourService-WeekDay-3"="Tuesday";
+"Home-HourService-WeekDay-4"="Wednesday";
+"Home-HourService-WeekDay-5"="Thursay";
+"Home-HourService-WeekDay-6"="Friday";
+"Home-HourService-WeekDay-7"="Saturday";
+
+
+// Location pin
+"Home-LocationPin-Outzone"="Go to the covered area";
+
+
+// Payment strings
+"Payment-Title"="PAYMENT";
+"Payment-Section-MainCard"="Main payment";
+"Payment-Section-AltCard"="Other payments";
+"Payment-Description-NbCard"="Card number";
+"Payment-Descritpion-Expiration"="Expiration date";
+"Payment-Delete-Label"="Delete";
+"Payment-Add-Button"="Add a credit card";
+
+"Payment-NameUpdateAlert-Title"="Edit";
+"Payment-NameUpdateAlert-Message"="Enter a new name for this credit card";
+
+// Suppression
+"Payment-Delete-Alert-Title"="Delete";
+"Payment-Delete-Alert-Message"="Do you want to delete this credit card ?";
+"Payment-Delete-Alert-Action-No" = "No";
+"Payment-Delete-Alert-Action-Yes" = "Yes";
+
+
+// AddPayment strings
+"AddPayment-Description-Secret"="Security code";
+"AddPayment-Description-Name"="Card Name";
+"AddPayment-Default-Name"="Personal";
+"AddPayment-PlaceHolder-Name"="Work, private...";
+"AddPayment-Title"="NEW CREDIT CARD";
+
+
+// ========== Vehicles ========== //
+"Vehicles-View-Title" = "Cars";
+"Vehicles-Button-Title" = "Add a car";
+
+// ----- Vehicle Setup ----- //
+"Vehicle-Setup-View-Title-Add" = "New car";
+"Vehicle-Setup-View-Title-Edit" = "Edit car";
+"Vehicle-Setup-View-RightBarButton-Add" = "Add";
+"Vehicle-Setup-View-RightBarButton-Edit" = "Delete";
+"Vehicle-Setup-View-RightBarButton-Cancel" = "Cancel";
+"Vehicle-Setup-Label-0" = "Brand";
+"Vehicle-Setup-Label-1" = "Model";
+"Vehicle-Setup-Label-2" = "Color";
+"Vehicle-Setup-Label-3" = "Plate number";
+"Vehicle-Setup-Placeholder-0" = "Volkswagen, Audi...";
+"Vehicle-Setup-Placeholder-1" = "Golf, A3...";
+"Vehicle-Setup-Placeholder-2" = "Select";
+"White"  = "White";
+"Black"  = "Black";
+"Grey"   = "Grey";
+"Red"    = "Red";
+"Blue"   = "Blue";
+"Yellow" = "Yellow";
+"Green"  = "Green";
+"Brown"  = "Brown";
+"Other"  = "Other";
+"Vehicle-Setup-Placeholder-3" = "AB-123-CD";
+"Vehicle-Setup-Button-Title" = "Save";
+// Alert Deletion
+"Vehicle-Delete-Alert-Title" = "Delete";
+"Vehicle-Delete-Alert-Message" = "Do you want to delete this car ?";
+"Vehicle-Delete-Alert-Action-No" = "No";
+"Vehicle-Delete-Alert-Action-Yes" = "Yes";
+
+
+
+// FeedBack PopUp View
+"FeedBackView-Header-Title" = "Your last ride";
+"FeedBackView-Price-Title" = "Total : ";
+"FeedBackView-Price-SubTitle" = "Charged on";
+"FeedBackView-Valets-Title" = "Rate your valets !";
+"FeedBackView-Valets-FirstValet-Prefix" = "1st valet : ";
+"FeedBackView-Valets-SecondValet-Prefix" = "2nd valet : ";
+"FeedBackView-Comment-Placeholder" = "Leave a comment...";
+"FeedBackView-Button-Title" = "Send";
+
+// Comment View
+"FeedBackView-CommentView-Title" = "Comment";
+
+
+// Libellé des boutons (ex: dans UIAlerteAlert)
+"UIAlertAction-Button-OK" = "OK";
+"UIAlertAction-Button-Cancel" = "Cancel";
+"UIAlertAction-Button-NO"="No";
+"UIAlertAction-Button-YES"="Yes";
+"UIAlertAction-Button-No" = "No";
+"UIAlertAction-Button-ConfirmCancel"="Yes, cancel it";
+"UIAlertAction-Button-NotNow"="Not now";
+
+
+// Libellé bouton retour
+"BackButtonItem-Title" = "Back";
+"CancelButtonItem-Title"="Cancel";
+
+
+// SearchView
+"SearchView-Title"="PICK UP PLACE SELECTED";
+"SearchView-PlaceHolder"="Select an address";
+"SearchBar-Placeholder"="Enter an address";
+
+// Meetings
+"Meetings-Title"="RIDES";
+
+// Coupons
+"Coupons-Title"="PROMO CODE";
+
+// Webviews
+"Webview-Support-Title"="SUPPORT";
+"Webview-Terms-Title"="TERMS OF SERVICE";
+"Webview-Legal-Title"="LEGAL";
+
+
+/***********************************/
+/******* NSURLResponse codes *******/
+/***********************************/
+
+"URLResponse-Title"="Server error - ";
+"URLResponse-401"="Email or password invalid";
+"URLResponse-404"="Not found";
+"URLResponse-503"="Service currently unavailable";
+
+
+
+

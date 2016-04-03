@@ -1,0 +1,24 @@
+PODS:
+  - GoogleAnalytics (3.14.0)
+  - GoogleMaps (1.10.5)
+  - SDVersion (2.5.2)
+  - Socket.IO-Client-Swift (4.1.1)
+  - Stripe (5.1.4):
+    - Stripe/Core (= 5.1.4)
+  - Stripe/Core (5.1.4)
+
+DEPENDENCIES:
+  - GoogleAnalytics
+  - GoogleMaps
+  - SDVersion
+  - Socket.IO-Client-Swift
+  - Stripe (< 6.0)
+
+SPEC CHECKSUMS:
+  GoogleAnalytics: 9be1afdb8deeac4bb5f13ca7f7d3b9db2a1f43dc
+  GoogleMaps: da51c62c338c2d9c47cdad470a0d1e0e4b8544e4
+  SDVersion: 52f2641db3a580616936b0ce66f4769706570654
+  Socket.IO-Client-Swift: 2620dbb779edbbd0bc0cac96c053ca7c35aba652
+  Stripe: 6864be95b09092f05526bc2e0a50804bc556aa0d
+
+COCOAPODS: 0.39.0

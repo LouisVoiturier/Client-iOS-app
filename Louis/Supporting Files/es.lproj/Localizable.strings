@@ -1,0 +1,550 @@
+/* No comment provided by engineer. */
+"AddPayment-Default-Name" = "Personnal ";
+
+/* No comment provided by engineer. */
+"AddPayment-Description-Name" = "Nombre dela tarjeta";
+
+/* (No Commment) */
+"AddPayment-Description-Secret" = "Criptograma";
+
+/* No comment provided by engineer. */
+"AddPayment-PlaceHolder-Name" = "Trabajo, perso";
+
+/* No comment provided by engineer. */
+"AddPayment-Title" = "Nueva tarjeta";
+
+/* No comment provided by engineer. */
+"BackButtonItem-Title" = "Vuelta";
+
+/* No comment provided by engineer. */
+"CancelButtonItem-Title" = "Cancelar";
+
+/* No comment provided by engineer. */
+"Coupons-Title" = "Códigos promocionales";
+
+/* No comment provided by engineer. */
+"FeedBackView-Button-Title" = "Enviar";
+
+/* No comment provided by engineer. */
+"FeedBackView-Comment-Placeholder" = "Quadar un comentario";
+
+/* No comment provided by engineer. */
+"FeedBackView-CommentView-Title" = "Comentario";
+
+/* No comment provided by engineer. */
+"FeedBackView-Header-Title" = "Su última carrera";
+
+/* No comment provided by engineer. */
+"FeedBackView-Price-SubTitle" = "Con cargo a ";
+
+/* No comment provided by engineer. */
+"FeedBackView-Price-Title" = "Total ";
+
+/* No comment provided by engineer. */
+"FeedBackView-Valets-FirstValet-Prefix" = "Primer conductor ";
+
+/* No comment provided by engineer. */
+"FeedBackView-Valets-SecondValet-Prefix" = "Segundo conductor ";
+
+/* No comment provided by engineer. */
+"FeedBackView-Valets-Title" = "Dé su opinión";
+
+/* No comment provided by engineer. */
+"Geoloc-AlertInfo-Msg" = "Para utilisar el servicio, debe aceptar la geolocalización";
+
+/* No comment provided by engineer. */
+"Geoloc-AlertInfo-Title" = "casi estamos";
+
+/* No comment provided by engineer. */
+"Geoloc-Setting-Button" = "Acceder a los reglajes";
+
+/* No comment provided by engineer. */
+"Home-AlertView-Description-NoCards" = "Quiere registrar una tarjeta de credito para reservar un conductor ?";
+
+/* No comment provided by engineer. */
+"Home-AlertView-Title-NoCards" = "Ninguno medio de pago regitrado";
+
+/* No comment provided by engineer. */
+"Home-BookButton-AskForReturn" = "Recuperar mi vehículo ";
+
+/* No comment provided by engineer. */
+"Home-BookButton-Book" = "Reservar ahora";
+
+/* No comment provided by engineer. */
+"Home-BookButton-Confirm" = "Confirmar";
+
+/* No comment provided by engineer. */
+"Home-BookButton-SubmitPicker" = "Seleccionar";
+
+/* No comment provided by engineer. */
+"Home-Bottom-Table-CellTitle-Card" = "Pago";
+
+/* No comment provided by engineer. */
+"Home-Bottom-Table-CellTitle-Price" = "Precio";
+
+/* No comment provided by engineer. */
+"Home-Bottom-Table-CellTitle-Vehicle" = "Vehículo";
+
+/* No comment provided by engineer. */
+"Home-Bottom-Table-NoCards" = "No tarjeta de credito";
+
+/* No comment provided by engineer. */
+"Home-Bottom-Table-NoVehicle" = "No vehículo";
+
+/* No comment provided by engineer. */
+"Home-Bottom-Table-SectionHeader" = "Pruebe y confirme su reserva";
+
+/* No comment provided by engineer. */
+"Home-Description-ClosingHour" = "Hora de cierre";
+
+/* No comment provided by engineer. */
+"Home-Description-Hours" = "Horarios";
+
+/* No comment provided by engineer. */
+"Home-Description-Prices" = "Precio";
+
+/* No comment provided by engineer. */
+"Home-Description-TimePast" = "Tiempo transcurrido";
+
+/* (No Commment) */
+"Home-HourService-WeekDay-1" = "Domingo";
+
+/* (No Commment) */
+"Home-HourService-WeekDay-2" = "Lunes";
+
+/* (No Commment) */
+"Home-HourService-WeekDay-3" = "Martes";
+
+/* (No Commment) */
+"Home-HourService-WeekDay-4" = "Miercoles";
+
+/* (No Commment) */
+"Home-HourService-WeekDay-5" = "Jueves";
+
+/* (No Commment) */
+"Home-HourService-WeekDay-6" = "Viernes";
+
+/* (No Commment) */
+"Home-HourService-WeekDay-7" = "Sábado";
+
+/* No comment provided by engineer. */
+"Home-LocationPin-Outzone" = "Ir a la zona cubierta";
+
+/* No comment provided by engineer. */
+"Home-OffZone-Text" = "La dirección elegida no esta en la zona cubierta por el servicio";
+
+/* No comment provided by engineer. */
+"Home-PinLabel-RDV" = "Lugar de cita";
+
+/* No comment provided by engineer. */
+"Meetings-Title" = "Carreras";
+
+/* (No Commment) */
+"Menu-CGV" = "Contrato de adhesión";
+
+/* (No Commment) */
+"Menu-Coupons" = "Codigos promocionales";
+
+/* (No Commment) */
+"Menu-Help" = "Ayuda";
+
+/* (No Commment) */
+"Menu-Home" = "Reservar un conductor";
+
+/* (No Commment) */
+"Menu-Legals" = "Menciones legales";
+
+/* (No Commment) */
+"Menu-Meetings" = "Carreras";
+
+/* (No Commment) */
+"Menu-Payment" = "Pago";
+
+/* (No Commment) */
+"Menu-Profile" = "Perfil";
+
+/* (No Commment) */
+"Menu-Vehicles" = "Vehículos";
+
+/* No comment provided by engineer. */
+"Payment-Add-Button" = "Añadir une carta";
+
+/* No comment provided by engineer. */
+"Payment-Delete-Alert-Action-No" = "No";
+
+/* No comment provided by engineer. */
+"Payment-Delete-Alert-Action-Yes" = "Sí";
+
+/* No comment provided by engineer. */
+"Payment-Delete-Alert-Message" = "Esta seguro querer suprimir esta tajeta ?";
+
+/* No comment provided by engineer. */
+"Payment-Delete-Alert-Title" = "Suprimir ";
+
+/* No comment provided by engineer. */
+"Payment-Delete-Label" = "Suprimir";
+
+/* No comment provided by engineer. */
+"Payment-Description-NbCard" = "Número";
+
+/* No comment provided by engineer. */
+"Payment-Descritpion-Expiration" = "Fecha de caducidad";
+
+/* No comment provided by engineer. */
+"Payment-NameUpdateAlert-Message" = "Pique un nuevo nombre para esta tajeta de credito para modificarle ";
+
+/* No comment provided by engineer. */
+"Payment-NameUpdateAlert-Title" = "Modificación";
+
+/* (No Commment) */
+"Payment-Section-AltCard" = "Otros medios de pago";
+
+/* (No Commment) */
+"Payment-Section-MainCard" = "Medio de pago principal";
+
+/* No comment provided by engineer. */
+"Payment-Title" = "Pago";
+
+/* No comment provided by engineer. */
+"Profile-Button-Modify" = "Modificar";
+
+/* No comment provided by engineer. */
+"Profile-ChangePwd-CurrentPwd" = "Contraseña actual incorrecta";
+
+/* No comment provided by engineer. */
+"Profile-ChangePwd-CurrentPwd-Label" = "Contraseña actual";
+
+/* No comment provided by engineer. */
+"Profile-ChangePwd-CurrentPwd-PlaceHolder" = "6 caráteres minimo";
+
+/* No comment provided by engineer. */
+"Profile-ChangePwd-NewPwd-Confirm" = "Las nuevas contraseñas deben ser identicas";
+
+/* No comment provided by engineer. */
+"Profile-ChangePwd-NewPwd-Label" = "Nueva contraseña";
+
+/* No comment provided by engineer. */
+"Profile-ChangePwd-NewPwd-PlaceHolder" = "6 caráteres minimo";
+
+/* No comment provided by engineer. */
+"Profile-ChangePwd-NewPwdConfirm-Label" = "Confirmación nueva contraseña";
+
+/* No comment provided by engineer. */
+"Profile-ChangePwd-NewPwdConfirm-PlaceHolder" = "6 caráteres minimo";
+
+/* No comment provided by engineer. */
+"Profile-ChangePwd-Pwd-MinSize" = "La nueva contrasña debe contener 6 caracteres minimo";
+
+/* No comment provided by engineer. */
+"Profile-ChangePwd-Record" = "Registrar";
+
+/* No comment provided by engineer. */
+"Profile-ChangePwd-Title" = "Nueva contraseña";
+
+/* No comment provided by engineer. */
+"Profile-Disconnect-Button" = "Desconectarse";
+
+/* No comment provided by engineer. */
+"Profile-Disconnect-Confirm-Msg" = "Esta segura querer desconectarse ?";
+
+/* No comment provided by engineer. */
+"Profile-Disconnect-Confirm-Title" = "Desconexión";
+
+/* (No Commment) */
+"Profile-Edit-Label" = "Modificar";
+
+/* No comment provided by engineer. */
+"Profile-FirstName-Label" = "Nombre";
+
+/* No comment provided by engineer. */
+"Profile-LastName-Label" = "Apellido";
+
+/* No comment provided by engineer. */
+"Profile-PhoneNumber-Label" = "Móvil";
+
+/* No comment provided by engineer. */
+"Profile-Title" = "Perfil";
+
+/* (No Commment) */
+"ProfileSetup-Button-Save" = "Registrar";
+
+/* No comment provided by engineer. */
+"ProfileSetup-Change-Picture" = "Cambiar mi foto";
+
+/* No comment provided by engineer. */
+"ProfileSetup-DiscardAllChange-Confirm-Msg" = "Esta seguro de querer cancelar las modificaciones ?";
+
+/* No comment provided by engineer. */
+"ProfileSetup-DiscardAllChange-Confirm-Title" = "Cancelar";
+
+/* No comment provided by engineer. */
+"ProfileSetup-SaveChange-Confirm-Msg" = "Esta seguro de querer registrar las modificaciones ?";
+
+/* No comment provided by engineer. */
+"ProfileSetup-SaveChange-Confirm-Title" = "Modificación ?";
+
+/* No comment provided by engineer. */
+"ProfileSetup-Title" = "Modificar mi perfil";
+
+/* (No Commment) */
+"ResearchPopup-BotText-AddPayment" = "Aditamento de una tarjeta en curso...";
+
+/* (No Commment) */
+"ResearchPopup-BotText-AddVehicle" = "Aditamento de un vehículo en curso...";
+
+/* No comment provided by engineer. */
+"ResearchPopup-BotText-Found" = "Reserva confirmada !";
+
+/* No comment provided by engineer. */
+"ResearchPopup-BotText-NotFound" = "Gracias de intentarlo más tarde !";
+
+/* No comment provided by engineer. */
+"ResearchPopup-BotText-Searching" = "Buscada de un conductor... ";
+
+/* No comment provided by engineer. */
+"ResearchPopup-TopText-NotFound" = "Lo siento, todos nos conductores son ocupados";
+
+/* No comment provided by engineer. */
+"SearchBar-Placeholder" = "Pique una dirección";
+
+/* No comment provided by engineer. */
+"SearchView-PlaceHolder" = "Seleccionar una dirección";
+
+/* No comment provided by engineer. */
+"SearchView-Title" = "Lugar de cita elegido";
+
+/* No comment provided by engineer. */
+"SecurityCode-Description" = "Codigo de seguridad";
+
+/* No comment provided by engineer. */
+"Sign-Email-Label" = "Email";
+
+/* No comment provided by engineer. */
+"Sign-Email-TextField" = "nombre@dominio.com";
+
+/* No comment provided by engineer. */
+"Sign-In-Title" = "Conexión";
+
+/* No comment provided by engineer. */
+"Sign-Pwd-Label" = "Contraseña";
+
+/* No comment provided by engineer. */
+"Sign-Pwd-TextField" = "6 caracteres minimo";
+
+/* No comment provided by engineer. */
+"Sign-PwdConfirm-Label" = "Confirmación";
+
+/* No comment provided by engineer. */
+"Sign-PwdConfirm-TextField" = "6 caracteres minimo";
+
+/* No comment provided by engineer. */
+"Sign-Up-Title" = "Inscripción";
+
+/* No comment provided by engineer. */
+"SignIn-Button-Title" = "Conectarse";
+
+/* No comment provided by engineer. */
+"SignIn-ForgottenPwd-Button" = "Contraseña olvidada";
+
+/* No comment provided by engineer. */
+"SignUp-AddCard-Warning-Msg" = "Su tarjeta de credito solo sera debitada si un conductor toma su vehículo en carga";
+
+/* No comment provided by engineer. */
+"SignUp-AddCard-Warning-Title" = "Añadir un medio de pago";
+
+/* No comment provided by engineer. */
+"SignUp-AddPayment-Later" = "Más tarde";
+
+/* No comment provided by engineer. */
+"SignUp-AddPayment-WelcomeMsg" = "Bienvenida";
+
+/* No comment provided by engineer. */
+"SignUp-Button-Record" = "Siguiente";
+
+/* (No Commment) */
+"SignUp-Button-Title" = "Inscribirse";
+
+/* No comment provided by engineer. */
+"SignUp-Check" = "SignUp-Check";
+
+/* No comment provided by engineer. */
+"SignUp-Check-Email" = "Dirección mail incorecta";
+
+/* No comment provided by engineer. */
+"SignUp-Check-Email-Format" = "Dirección mail debe ser en el formato nombre@dominio.com";
+
+/* No comment provided by engineer. */
+"SignUp-Check-Multiple-Error" = "SignUp-Check-Multpiple-Error";
+
+/* No comment provided by engineer. */
+"SignUp-Check-Pwd" = "Contraseña incorecta";
+
+/* No comment provided by engineer. */
+"SignUp-Check-Pwd-MinSize" = "La contraseña debe contener 6 caracteres minimo";
+
+/* No comment provided by engineer. */
+"SignUp-Check-Pwd-ReEntry" = "Las contraseñas deben ser identicas";
+
+/* No comment provided by engineer. */
+"SignUpProfile-AddPicture" = "Añadir una foto";
+
+/* No comment provided by engineer. */
+"SignUpProfile-Button-Title" = "Registrar";
+
+/* No comment provided by engineer. */
+"SignUpProfile-CarHeaderTitle" = "Su vehículo";
+
+/* No comment provided by engineer. */
+"SignUpProfile-Check-Firstname-ErrMsg" = "Su apelido es demasiado corto";
+
+/* No comment provided by engineer. */
+"SignUpProfile-Check-Lastname-ErrMsg" = "Su nombre es demasiado corto";
+
+/* No comment provided by engineer. */
+"SignUpProfile-Check-Multiple-Error" = "Gracias de corigir los campos en rojo";
+
+/* No comment provided by engineer. */
+"SignUpProfile-Check-PhoneNumber-ErrMsg" = "El número de teléfono";
+
+/* No comment provided by engineer. */
+"SignUpProfile-Check-VehiculeBrand-ErrMsg" = "Marca del vehículo ausente";
+
+/* No comment provided by engineer. */
+"SignUpProfile-Check-VehiculeColor-ErrMsg" = "Color del vehículo ausente";
+
+/* No comment provided by engineer. */
+"SignUpProfile-Check-VehiculeModel-ErrMsg" = "Modelo del vehículo ausente";
+
+/* No comment provided by engineer. */
+"SignUpProfile-ChoosePicture" = "Eligir en la bibliotecá";
+
+/* No comment provided by engineer. */
+"SignUpProfile-TakePicture" = "Tomar una foto";
+
+/* No comment provided by engineer. */
+"SignUpProfile-UIView-Picker-Button-Done" = "Terminado";
+
+/* (No Commment) */
+"UIAlertAction-Button-Cancel" = "Cancelar";
+
+/* No comment provided by engineer. */
+"UIAlertAction-Button-ConfirmCancel" = "Si, cancelo";
+
+/* No comment provided by engineer. */
+"UIAlertAction-Button-NO" = "No";
+
+/* (No Commment) */
+"UIAlertAction-Button-No" = "No";
+
+/* No comment provided by engineer. */
+"UIAlertAction-Button-NotNow" = "No ahora";
+
+/* No comment provided by engineer. */
+"UIAlertAction-Button-OK" = "Ok";
+
+/* No comment provided by engineer. */
+"UIAlertAction-Button-YES" = "Sí";
+
+/* No comment provided by engineer. */
+"UIApplicationShortcutItemTitle-RequestValet" = "Reservar un conductor";
+
+/* No comment provided by engineer. */
+"URLResponse-401" = "Dirección mail o contraseña incorrecto";
+
+/* No comment provided by engineer. */
+"URLResponse-404" = "Inencontrable";
+
+/* No comment provided by engineer. */
+"URLResponse-503" = "No disponible momentáneamente";
+
+/* No comment provided by engineer. */
+"URLResponse-Title" = "Error en el sevidor";
+
+/* No comment provided by engineer. */
+"Vehicle-Delete-Alert-Action-No" = "No";
+
+/* No comment provided by engineer. */
+"Vehicle-Delete-Alert-Action-Yes" = "Sí";
+
+/* No comment provided by engineer. */
+"Vehicle-Delete-Alert-Message" = "Esta seguro de querer suprimir este vehículo ?";
+
+/* No comment provided by engineer. */
+"Vehicle-Delete-Alert-Title" = "Suprimir";
+
+/* No comment provided by engineer. */
+"Vehicle-Setup-Button-Title" = "Registrar";
+
+/* No comment provided by engineer. */
+"Vehicle-Setup-Label-0" = "Marca";
+
+/* No comment provided by engineer. */
+"Vehicle-Setup-Label-1" = "Modelo";
+
+/* No comment provided by engineer. */
+"Vehicle-Setup-Label-2" = "Color";
+
+/* No comment provided by engineer. */
+"Vehicle-Setup-Label-3" = "Número de placa";
+
+/* No comment provided by engineer. */
+"Vehicle-Setup-Placeholder-0" = "Renault, Peugeot...";
+
+/* No comment provided by engineer. */
+"Vehicle-Setup-Placeholder-1" = "Clio, 208...";
+
+/* No comment provided by engineer. */
+"Vehicle-Setup-Placeholder-2" = "Seleccione";
+
+"White"  = "Blanco";
+"Black"  = "Negro";
+"Grey"   = "Gris";
+"Red"    = "Rojo";
+"Blue"   = "Azul";
+"Yellow" = "Amarillo";
+"Green"  = "Verde";
+"Brown"  = "Marrón";
+"Other"  = "Otro";
+
+/* No comment provided by engineer. */
+"Vehicle-Setup-Placeholder-3" = "AB-123-CD";
+
+/* No comment provided by engineer. */
+"Vehicle-Setup-View-RightBarButton-Add" = "Añadir";
+
+/* No comment provided by engineer. */
+"Vehicle-Setup-View-RightBarButton-Cancel" = "Cancelar";
+
+/* No comment provided by engineer. */
+"Vehicle-Setup-View-RightBarButton-Edit" = "Suprimir";
+
+/* No comment provided by engineer. */
+"Vehicle-Setup-View-Title-Add" = "Nuevo vehículo";
+
+/* No comment provided by engineer. */
+"Vehicle-Setup-View-Title-Edit" = "Modificar";
+
+/* No comment provided by engineer. */
+"Vehicles-Button-Title" = "Anadir un vehículo";
+
+/* No comment provided by engineer. */
+"Vehicles-View-Title" = "Vehículos";
+
+/* (No Commment) */
+"Webview-Legal-Title" = "Menciones legales";
+
+/* (No Commment) */
+"Webview-Support-Title" = "Ayuda";
+
+/* (No Commment) */
+"Webview-Terms-Title" = "Contrato de adhesión";
+
+/* No comment provided by engineer. */
+"Welcome-SignIn-TitlePart1" = "Ya tiene una cuenta ?";
+
+/* No comment provided by engineer. */
+"Welcome-SignIn-TitlePart2Underline" = "Conecte usted !";
+
+/* No comment provided by engineer. */
+"Welcome-SignUp-Button-Title" = "Inscribirse";
+

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Legals-->
+        <scene sceneID="lqd-U7-u0f">
+            <objects>
+                <viewController id="6BY-uw-IoI" customClass="LegalsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dIc-ap-990"/>
+                        <viewControllerLayoutGuide type="bottom" id="A3L-KS-Dzv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3Yz-0d-N7c">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleAspectFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Iy-7Y-CVW">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8Iy-7Y-CVW" firstAttribute="leading" secondItem="3Yz-0d-N7c" secondAttribute="leading" id="Dbk-XI-cH9"/>
+                            <constraint firstItem="8Iy-7Y-CVW" firstAttribute="leading" secondItem="3Yz-0d-N7c" secondAttribute="leadingMargin" constant="-15" id="Fot-Mo-GBy"/>
+                            <constraint firstItem="8Iy-7Y-CVW" firstAttribute="leading" secondItem="3Yz-0d-N7c" secondAttribute="leadingMargin" constant="-15" id="HQH-bo-TEP"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="8Iy-7Y-CVW" secondAttribute="leading" id="ObZ-Ji-Gdd"/>
+                            <constraint firstItem="8Iy-7Y-CVW" firstAttribute="top" relation="lessThanOrEqual" secondItem="dIc-ap-990" secondAttribute="bottom" id="RIg-rp-lwN"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8Iy-7Y-CVW" secondAttribute="trailing" constant="-15" id="Rlp-jY-u9o"/>
+                            <constraint firstItem="8Iy-7Y-CVW" firstAttribute="top" secondItem="dIc-ap-990" secondAttribute="bottom" constant="-15" id="SL4-TP-iVF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8Iy-7Y-CVW" secondAttribute="trailing" id="V9M-Jn-omW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8Iy-7Y-CVW" secondAttribute="trailing" constant="-15" id="VFC-qQ-HHB"/>
+                            <constraint firstItem="A3L-KS-Dzv" firstAttribute="top" secondItem="8Iy-7Y-CVW" secondAttribute="bottom" constant="8" id="VpL-CH-g1o"/>
+                            <constraint firstItem="8Iy-7Y-CVW" firstAttribute="top" secondItem="dIc-ap-990" secondAttribute="bottom" id="XRv-6i-PAe"/>
+                            <constraint firstItem="8Iy-7Y-CVW" firstAttribute="bottom" secondItem="A3L-KS-Dzv" secondAttribute="top" id="nXN-NJ-AQb"/>
+                            <constraint firstAttribute="trailing" secondItem="8Iy-7Y-CVW" secondAttribute="trailing" id="yo4-a9-2m1"/>
+                            <constraint firstItem="A3L-KS-Dzv" firstAttribute="top" secondItem="8Iy-7Y-CVW" secondAttribute="bottom" id="zNS-4n-xcR"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Fot-Mo-GBy"/>
+                                <exclude reference="HQH-bo-TEP"/>
+                                <exclude reference="ObZ-Ji-Gdd"/>
+                                <exclude reference="RIg-rp-lwN"/>
+                                <exclude reference="Rlp-jY-u9o"/>
+                                <exclude reference="SL4-TP-iVF"/>
+                                <exclude reference="V9M-Jn-omW"/>
+                                <exclude reference="VFC-qQ-HHB"/>
+                                <exclude reference="VpL-CH-g1o"/>
+                                <exclude reference="zNS-4n-xcR"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="Legals" id="hZx-Dl-zvs">
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="Qze-IS-U2A"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="menuButton" destination="Qze-IS-U2A" id="GKi-1A-dau"/>
+                        <outlet property="myWebView" destination="8Iy-7Y-CVW" id="hI1-aI-6AG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VWg-QK-ge3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="876" y="202"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="db1-QH-Rmb">
+            <objects>
+                <navigationController storyboardIdentifier="NavLegals" automaticallyAdjustsScrollViewInsets="NO" id="4LD-Eb-bva" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nzG-wQ-LBN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="6BY-uw-IoI" kind="relationship" relationship="rootViewController" id="j5m-kI-Q5S"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="02l-us-fDV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="64" y="202"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="menu" width="22" height="22"/>
+    </resources>
+</document>

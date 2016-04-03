@@ -1,0 +1,309 @@
+/*
+ Localizable.strings
+ Louis
+ 
+ Created by Giang Christian on 25/09/2015.
+ Copyright (c) 2015 Louis. All rights reserved.
+ */
+
+"UIApplicationShortcutItemTitle-RequestValet" = "Réserver un voiturier";
+
+
+//Menu
+"Menu-Home"="Réserver un voiturier";
+"Menu-Profile"="Profil";
+"Menu-Vehicles"="Véhicules";
+"Menu-Payment"="Paiement";
+"Menu-Meetings"="Courses";
+"Menu-Coupons"="Codes promo";
+"Menu-Help"="Aide";
+"Menu-CGV"="CGV";
+"Menu-Legals"="Mentions légales";
+
+
+// URL pour afficher les CGV, Aide, Mentions Légales
+// Apple n'accepte que du httpS (et pas http) dans WebView
+"URL-Help"="https://fierce-spire-6248.herokuapp.com/api/aide";
+"URL-CGV"="https://fierce-spire-6248.herokuapp.com/api/CGV";
+"URL-Legals"="https://fierce-spire-6248.herokuapp.com/api/mentions-legales";
+
+
+// Welcome
+"Welcome-SignUp-Button-Title" = "S'inscrire";
+"Welcome-SignIn-TitlePart1" = "Déjà un compte ? ";
+"Welcome-SignIn-TitlePart2Underline" = "Connectez-vous !";
+
+
+// Sign In, Sign Up
+"Sign-In-Title" = "CONNEXION";
+"Sign-Up-Title" = "INSCRIPTION";
+"Sign-Email-Label"="Email";
+"Sign-Email-TextField"="nom@domaine.com";
+"Sign-Pwd-Label"="Mot de passe";
+"Sign-Pwd-TextField"="6 caractères minimum";
+"Sign-PwdConfirm-Label"="Confirmation";
+"Sign-PwdConfirm-TextField"="6 caractères minimum";
+"SignIn-ForgottenPwd-Button" = "Mot de passe oublié ?";
+
+"SignIn-Button-Title"="Se connecter";
+"SignUp-Button-Title"="S'inscrire";
+"SignUp-Button-Record"="Suivant";
+
+"SignUp-Check-Email" = "Adresse email incorrecte";
+"SignUp-Check-Email-Format" = "L'adresse email doit être au format nom@domaine.com";
+
+"SignUp-Check-Pwd" = "Mot de passe incorrect";
+"SignUp-Check-Pwd-MinSize" = "Le mot de passe doit contenir 6 caractères minimum";
+"SignUp-Check-Pwd-ReEntry" = "Les mots de passes doivent être identiques";
+
+
+// Sign Up Profile
+"SignUpProfile-Button-Title"="Enregistrer";
+"SignUpProfile-CarHeaderTitle"="Votre véhicule";
+"SignUpProfile-AddPicture"="Ajouter une photo";
+"SignUpProfile-ChoosePicture"="Choisir dans la bibliothèque";
+"SignUpProfile-TakePicture"="Prendre une photo";
+
+"SignUpProfile-Check-Firstname-ErrMsg"="Votre prénom est trop court";
+"SignUpProfile-Check-Lastname-ErrMsg"="Votre nom est trop court";
+"SignUpProfile-Check-PhoneNumber-ErrMsg" ="Le numéro de téléphone est incorrect";
+"SignUpProfile-Check-VehiculeBrand-ErrMsg"="Marque du véhicule absente";
+"SignUpProfile-Check-VehiculeModel-ErrMsg"="Modèle du véhicule absent";
+"SignUpProfile-Check-VehiculeColor-ErrMsg"="Couleur du véhicule absente";
+"SignUpProfile-Check-Multiple-Error"="Merci de corriger les champs en rouge";
+
+"SignUpProfile-UIView-Picker-Button-Done" = "Terminé";
+
+"SignUp-AddPayment-Later" = "Plus tard";
+"SignUp-AddCard-Warning-Title" = "Ajouter un moyen de paiement";
+"SignUp-AddCard-Warning-Msg" ="Votre carte bancaire sera débitée uniquement si un voiturier prend votre véhicule en charge";
+"SignUp-AddPayment-WelcomeMsg"="Bienvenue";
+
+
+//Profil
+"Profile-Title"="PROFIL";
+"Profile-Edit-Label"="Modifier";
+"Profile-FirstName-Label" = "Prénom";
+"Profile-LastName-Label" = "Nom";
+"Profile-PhoneNumber-Label" = "Portable";
+"Profile-FirstName-Placeholder" = "";
+"Profile-LastName-Placeholder" = "";
+"Profile-PhoneNumber-Placeholder" = "+33";
+"Profile-Button-Modify"="Modifier";
+
+"ProfileSetup-SaveChange-Confirm-Title" = "Modification";
+"ProfileSetup-SaveChange-Confirm-Msg" = "Êtes-vous sûr de vouloir enregistrer les modifications ?";
+
+"ProfileSetup-DiscardAllChange-Confirm-Title" = "Annuler";
+"ProfileSetup-DiscardAllChange-Confirm-Msg" = "Êtes-vous sûr de vouloir annuler les modifications ?";
+
+"Profile-Disconnect-Button" = "Se déconnecter";
+"Profile-Disconnect-Confirm-Title"="Déconnexion";
+"Profile-Disconnect-Confirm-Msg"="Êtes-vous sûr de vouloir vous déconnecter ?";
+
+
+//Profil Setup (modify)
+"ProfileSetup-Title"="MODIFIER MON PROFIL";
+"ProfileSetup-Change-Picture"="Changer ma photo";
+"ProfileSetup-Button-Save"="Enregistrer";
+
+//Profil Change Passeword
+"Profile-ChangePwd-Title"="NOUVEAU MOT DE PASSE";
+"Profile-ChangePwd-Record" = "Enregistrer";
+
+"Profile-ChangePwd-CurrentPwd-Label"="Mot de passe actuel";
+"Profile-ChangePwd-CurrentPwd-PlaceHolder"="6 caractères minimum";
+"Profile-ChangePwd-NewPwd-Label"="Nouveau mot de passe";
+"Profile-ChangePwd-NewPwd-PlaceHolder"="6 caractères minimum";
+"Profile-ChangePwd-NewPwdConfirm-Label"="Confirmation nouveau MDP";
+"Profile-ChangePwd-NewPwdConfirm-PlaceHolder"="6 caractères minimum";
+
+"Profile-ChangePwd-CurrentPwd"="Mot de passe actuel incorrect";
+"Profile-ChangePwd-Pwd-MinSize"="Le nouveau mot de passe doit contenir 6 caractères minimum";
+"Profile-ChangePwd-NewPwd-Confirm"="Les nouveaux mots de passes doivent être identiques";
+
+
+// Geoloc forbidden
+"Geoloc-AlertInfo-Title"="On y est presque !";
+"Geoloc-AlertInfo-Msg"="Pour utiliser le service, vous devez accepter la géolocalisation.";
+"Geoloc-Setting-Button"="Accéder aux Réglagles";
+
+
+// Home strings
+"Home-BookButton-Book"="Réserver maintenant";
+"Home-BookButton-Confirm"="Confirmer";
+"Home-BookButton-AskForReturn"="Récupérer mon véhicule";
+"Home-BookButton-SubmitPicker"="Sélectionner";
+"Home-OffZone-Text"="L'adresse sélectionnée n'est pas dans la zone couverte par le service";
+"Home-Description-Hours"="Horaires";
+"Home-Description-Prices"="Tarif";
+"Home-Description-ClosingHour"="Heure de fermeture";
+"Home-Description-TimePast"="Temps écoulé";
+"Home-PinLabel-RDV"="Lieu de RDV";
+
+
+// Home Alerts
+"Home-AlertView-Title-NoCards"="Aucun moyen de paiement enregistré";
+"Home-AlertView-Description-NoCards"="Voulez-vous enregistrer une carte bancaire pour réserver un voiturier ?";
+
+
+// Home Bottom Table View
+"Home-Bottom-Table-SectionHeader"="Verifiez et confirmez votre réservation";
+"Home-Bottom-Table-NoVehicle"="Pas de vehicule";
+"Home-Bottom-Table-NoCards"="Pas de carte bancaire";
+"Home-Bottom-Table-CellTitle-Vehicle"="Véhicule";
+"Home-Bottom-Table-CellTitle-Card"="Paiement";
+"Home-Bottom-Table-CellTitle-Price"="Tarif";
+
+
+// Security Code
+"SecurityCode-Description"="Code de sécurité";
+
+
+// Research popup view
+"ResearchPopup-BotText-Searching"="Recherche d'un voiturier...";
+"ResearchPopup-BotText-Found"="Réservation confirmée !";
+"ResearchPopup-BotText-NotFound"="Merci de réessayer plus tard";
+"ResearchPopup-BotText-AddVehicle"="Ajout d'un véhicule en cours...";
+"ResearchPopup-BotText-AddPayment"="Ajout d'une carte bancaire en cours...";
+"ResearchPopup-TopText-NotFound"="Désolé, nos voituriers sont tous occupés.";
+
+
+// Horaire du service
+"Home-HourService-WeekDay-1"="Dimanche";
+"Home-HourService-WeekDay-2"="Lundi";
+"Home-HourService-WeekDay-3"="Mardi";
+"Home-HourService-WeekDay-4"="Mercredi";
+"Home-HourService-WeekDay-5"="Jeudi";
+"Home-HourService-WeekDay-6"="Vendredi";
+"Home-HourService-WeekDay-7"="Samedi";
+
+
+// Location pin
+"Home-LocationPin-Outzone"="Aller dans la zone couverte";
+
+
+// Payment strings
+"Payment-Title"="PAIEMENT";
+"Payment-Section-MainCard"="Moyen de paiement principal";
+"Payment-Section-AltCard"="Autres moyens de paiement";
+"Payment-Description-NbCard"="N° carte";
+"Payment-Descritpion-Expiration"="Date expiration";
+"Payment-Delete-Label"="Supprimer";
+"Payment-Add-Button"="Ajouter une carte";
+
+"Payment-NameUpdateAlert-Title"="Modification";
+"Payment-NameUpdateAlert-Message"="Saisissez un nouveau nom pour cette carte bancaire pour le modifier";
+
+// Suppression
+"Payment-Delete-Alert-Title"="Supprimer";
+"Payment-Delete-Alert-Message"="Etes-vous sûr de vouloir supprimer cette carte bancaire ?";
+"Payment-Delete-Alert-Action-No" = "Non";
+"Payment-Delete-Alert-Action-Yes" = "Oui";
+
+// AddPayment strings
+"AddPayment-Description-Secret"="Cryptogramme";
+"AddPayment-Description-Name"="Nom de la carte";
+"AddPayment-Default-Name"="Personnel";
+"AddPayment-PlaceHolder-Name"="Travail, perso...";
+"AddPayment-Title"="NOUVELLE CARTE";
+
+
+// ========== Vehicles ========== //
+"Vehicles-View-Title" = "Véhicules";
+"Vehicles-Button-Title" = "Ajouter un véhicule";
+// ----- Vehicle Setup ----- //
+"Vehicle-Setup-View-Title-Add" = "Nouveau véhicule";
+"Vehicle-Setup-View-Title-Edit" = "Modifier";
+"Vehicle-Setup-View-RightBarButton-Add" = "Ajouter";
+"Vehicle-Setup-View-RightBarButton-Edit" = "Supprimer";
+"Vehicle-Setup-View-RightBarButton-Cancel" = "Annuler";
+"Vehicle-Setup-Label-0" = "Marque";
+"Vehicle-Setup-Label-1" = "Modèle";
+"Vehicle-Setup-Label-2" = "Couleur";
+"Vehicle-Setup-Label-3" = "N° de plaque";
+"Vehicle-Setup-Placeholder-0" = "Renault, Peugeot...";
+"Vehicle-Setup-Placeholder-1" = "Clio, 208...";
+"Vehicle-Setup-Placeholder-2" = "Sélectionnez";
+"White"  = "Blanc";
+"Black"  = "Noir";
+"Grey"   = "Gris";
+"Red"    = "Rouge";
+"Blue"   = "Bleu";
+"Yellow" = "Jaune";
+"Green"  = "Vert";
+"Brown"  = "Marron";
+"Other"  = "Autre";
+"Vehicle-Setup-Placeholder-3" = "AB-123-CD";
+"Vehicle-Setup-Button-Title" = "Enregistrer";
+
+
+// Alert Deletion
+"Vehicle-Delete-Alert-Title" = "Supprimer";
+"Vehicle-Delete-Alert-Message" = "Êtes-vous sûr de vouloir supprimer ce véhicule ?";
+"Vehicle-Delete-Alert-Action-No" = "Non";
+"Vehicle-Delete-Alert-Action-Yes" = "Oui";
+
+
+// FeedBack PopUp View
+"FeedBackView-Header-Title" = "Votre dernière course";
+"FeedBackView-Price-Title" = "Total : ";
+"FeedBackView-Price-SubTitle" = "Prélevé sur";
+"FeedBackView-Valets-Title" = "Donnez votre avis !";
+"FeedBackView-Valets-FirstValet-Prefix" = "1er voiturier : ";
+"FeedBackView-Valets-SecondValet-Prefix" = "2ème voiturier : ";
+"FeedBackView-Comment-Placeholder" = "Laissez un commentaire...";
+"FeedBackView-Button-Title" = "Envoyer";
+// Comment View
+"FeedBackView-CommentView-Title" = "Commentaire";
+
+
+// Libellé des boutons (ex: dans UIAlerteAlert)
+"UIAlertAction-Button-OK" = "OK";
+"UIAlertAction-Button-Cancel" = "Annuler";
+"UIAlertAction-Button-NO"="Non";
+"UIAlertAction-Button-YES"="Oui";
+"UIAlertAction-Button-No" = "Non";
+"UIAlertAction-Button-ConfirmCancel" = "Oui, j'annule";
+"UIAlertAction-Button-NotNow" = "Pas maintenant";
+
+
+// Libellé bouton retour
+"BackButtonItem-Title" = "Retour";
+"CancelButtonItem-Title"="Annuler";
+
+
+// SearchView
+"SearchView-Title"="LIEU DE RENDEZ-VOUS SELECTIONNÉ";
+"SearchView-PlaceHolder"="Sélectionnez une adresse";
+"SearchBar-Placeholder"="Saisissez une adresse";
+
+// Meetings
+"Meetings-Title"="COURSES";
+
+// Coupons
+"Coupons-Title"="CODES PROMO";
+
+// Webviews
+"Webview-Support-Title"="AIDE";
+"Webview-Terms-Title"="CGV";
+"Webview-Legal-Title"="MENTIONS LÉGALES";
+
+
+/***********************************/
+/******* NSURLResponse codes *******/
+/***********************************/
+
+"URLResponse-Title"="Erreur serveur - ";
+"URLResponse-401"="Adresse email ou mot de passe incorrect";
+"URLResponse-404"="Introuvable";
+"URLResponse-503"="Le service est momentanement indisponible";
+
+
+
+
+
+
+
+
+
