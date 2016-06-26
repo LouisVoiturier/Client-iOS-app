@@ -50,12 +50,9 @@ static NSString *kPickerCellID = @"vehicleSetupColorPickerCell";
 
 @interface VehicleSetupTableViewController ()
 {
-//    NSMutableDictionary *mutableSetupTextFields;
-//    NSDictionary *setupTextFields;
-    NSMutableArray *mutableSetupTextFields;
-    NSArray *setupTextFields;
-    NSArray *setupTextFieldsKeys;
+    NSMutableArray *setupTextFields;
     BigButtonView *bigButtonView;
+    UIPickerView *pickerViewColor;
     NSIndexPath  *pickerIndexPath;
     NSInteger selectedColorIndex;
     NSArray *pickerDataSource;
@@ -71,6 +68,21 @@ static NSString *kPickerCellID = @"vehicleSetupColorPickerCell";
 // ----- VIEW LOADING MANAGEMENT ----- //
 // *********************************** //
 @implementation VehicleSetupTableViewController
+
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    
+    setupTextFields = [[NSMutableArray alloc] init];
+    NSArray *visibleCells = [[self tableView] visibleCells];
+    for (UITableViewCell *cell in visibleCells) {
+        if ([cell isKindOfClass:[VehicleSetupTableViewCell class]]) {
+            [setupTextFields addObject:[(VehicleSetupTableViewCell*)cell txtField]];
+        } else if ([cell isKindOfClass:[VehicleSetupPickerCell class]]) {
+            pickerViewColor = [(VehicleSetupPickerCell*)cell colorPicker];
+        }
+    }
+}
 
 
 - (void)viewDidLoad
@@ -124,19 +136,19 @@ static NSString *kPickerCellID = @"vehicleSetupColorPickerCell";
             [[self navigationItem] setRightBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Vehicle-Setup-View-RightBarButton-Edit", nil) style:UIBarButtonItemStylePlain target:self action:@selector(deleteVehicle)]];
         }
         
-        VehicleSetupTableViewCell *brandCell = [[self tableView] cellForRowAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0]];
-        VehicleSetupTableViewCell *modelCell = [[self tableView] cellForRowAtIndexPath:[NSIndexPath indexPathForItem:1 inSection:0]];
-        VehicleSetupTableViewCell *colorCell = [[self tableView] cellForRowAtIndexPath:[NSIndexPath indexPathForItem:2 inSection:0]];
-        VehicleSetupTableViewCell *plateCell = [[self tableView] cellForRowAtIndexPath:[NSIndexPath indexPathForItem:3 inSection:0]];
+        UITextField *brandTxtField = [setupTextFields objectAtIndex:VehicleSetupTableViewCellTypeBrand];
+        UITextField *modelTxtField = [setupTextFields objectAtIndex:VehicleSetupTableViewCellTypeModel];
+        UITextField *colorTxtField = [setupTextFields objectAtIndex:VehicleSetupTableViewCellTypeColor];
+        UITextField *plateTxtField = [setupTextFields objectAtIndex:VehicleSetupTableViewCellTypePlate];
         
-        [[brandCell txtField] setText:[_vehicleInEdition brand]];
-        [[modelCell txtField] setText:[_vehicleInEdition model]];
+        [brandTxtField setText:[_vehicleInEdition brand]];
+        [modelTxtField setText:[_vehicleInEdition model]];
         selectedColorIndex = [pickerDataSource indexOfObject:[_vehicleInEdition color]];
         if (selectedColorIndex != NSNotFound) {
             [colorTxtField setText:[pickerDataSource objectAtIndex:selectedColorIndex]];
         }
-
-        [[plateCell txtField] setText:[_vehicleInEdition numberPlate]];
+        [plateTxtField setText:[_vehicleInEdition numberPlate]];
+        
         [[bigButtonView button] setEnabled:YES];
     }
     else
@@ -147,14 +159,6 @@ static NSString *kPickerCellID = @"vehicleSetupColorPickerCell";
         [[self navigationItem] setRightBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Vehicle-Setup-View-RightBarButton-Cancel", nil) style:UIBarButtonItemStylePlain target:self action:@selector(cancelAdd)]];
         
         
-        // Reset text field before their appearance.
-        if (setupTextFields != nil)
-        {
-            for (UITextField *txtfield in setupTextFields)
-            {
-                [txtfield setText:nil];
-            }
-        }
         
         [pickerViewColor selectRow:0 inComponent:0 animated:NO];
         [[bigButtonView button] setEnabled:NO];
@@ -166,12 +170,9 @@ static NSString *kPickerCellID = @"vehicleSetupColorPickerCell";
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    setupTextFields = [mutableSetupTextFields copy];
-    if ([self isInEdition] == NO)
-    {
-        [[setupTextFields firstObject] becomeFirstResponder];
+    if ([self isInEdition] == NO) {
+        [[setupTextFields objectAtIndex:VehicleSetupTableViewCellTypeBrand] becomeFirstResponder];
     }
-//    mutableSetupTextFields = nil;
 }
 
 
@@ -195,16 +196,10 @@ static NSString *kPickerCellID = @"vehicleSetupColorPickerCell";
         [[self tableView] endUpdates];
     }
     
-    
-    VehicleSetupTableViewCell *brandCell = [[self tableView] cellForRowAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0]];
-    VehicleSetupTableViewCell *modelCell = [[self tableView] cellForRowAtIndexPath:[NSIndexPath indexPathForItem:1 inSection:0]];
-    //        VehicleSetupTableViewCell *colorCell = [[self tableView] cellForRowAtIndexPath:[NSIndexPath indexPathForItem:2 inSection:0]];
-      VehicleSetupTableViewCell *plateCell = [[self tableView] cellForRowAtIndexPath:[NSIndexPath indexPathForItem:3 inSection:0]];
-    
-    
-    [[brandCell txtField] setText:nil];
-    [[modelCell txtField] setText:nil];
-    [[plateCell txtField] setText:nil];
+    // Reset text in text fields
+    for (UITextField *txtField in setupTextFields) {
+        [txtField setText:nil];
+    }
 }
 
 
@@ -330,10 +325,6 @@ static NSString *kPickerCellID = @"vehicleSetupColorPickerCell";
     {
         VehicleSetupTableViewCell *textFieldCell = [tableView dequeueReusableCellWithIdentifier:kTxtFieldCellID];
         
-        if (textFieldCell == nil)
-        {
-            textFieldCell = [[VehicleSetupTableViewCell alloc] initWithStyle:-1 reuseIdentifier:kTxtFieldCellID];
-        }
         
         NSUInteger indexForConfiguration = indexPath.row;
         if ([self pickerIsShown] && indexForConfiguration >= pickerIndexPath.row)
@@ -345,15 +336,11 @@ static NSString *kPickerCellID = @"vehicleSetupColorPickerCell";
         [[textFieldCell txtField] setDelegate:self];
         
         
-        if (mutableSetupTextFields == nil)
-        {
-            //            mutableSetupTextFields = [[NSMutableDictionary alloc] init];
-            mutableSetupTextFields = [[NSMutableArray alloc] init];
+        if (textFieldCell == nil) {
+            textFieldCell = [[VehicleSetupTableViewCell alloc] initWithStyle:-1 reuseIdentifier:kTxtFieldCellID];
+            [setupTextFields replaceObjectAtIndex:indexForConfiguration withObject:[textFieldCell txtField]];
         }
         
-        // Get key (NSString) from setupTextFieldsKeys (NSArray) and put the textField in the dictionary
-        //        [mutableSetupTextFields setValue:[cell txtField] forKey:[setupTextFieldsKeys objectAtIndex:indexPath.row]];
-        [mutableSetupTextFields addObject:[textFieldCell txtField]];
         
         cell = textFieldCell;
     }
@@ -542,19 +529,18 @@ static NSString *kPickerCellID = @"vehicleSetupColorPickerCell";
         [[self tableView] endUpdates];
     }
     
-    if ([self isInEdition])
-    {
+    // Récupération des (posssible) nouvelles valeurs pour le véhicule
+    NSString *brand       = [[setupTextFields objectAtIndex:VehicleSetupTableViewCellTypeBrand] text];
+    NSString *model       = [[setupTextFields objectAtIndex:VehicleSetupTableViewCellTypeModel] text];
+    NSString *color       = [[setupTextFields objectAtIndex:VehicleSetupTableViewCellTypeColor] text];
+    NSString *numberPlate = [[setupTextFields objectAtIndex:VehicleSetupTableViewCellTypePlate] text];
+  
+    if ([self isInEdition]) {
         //TODO: récupération des textFields et de leur texte
         //    NSArray *visibleCells = [[self tableView] visibleCells];
         //    [visibleCells objectAtIndex:0]
         //TODO:Verification des champs
         //TODO:Création d'un véhicule
-
-        // Récupération des (posssible) nouvelles valeurs pour le véhicule
-        NSString *brand = [[[[self tableView] cellForRowAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0]] txtField] text];
-        NSString *model = [[[[self tableView] cellForRowAtIndexPath:[NSIndexPath indexPathForItem:1 inSection:0]] txtField] text];
-        NSString *color = [[[[self tableView] cellForRowAtIndexPath:[NSIndexPath indexPathForItem:2 inSection:0]] txtField] text];
-        NSString *numberPlate = [[[[self tableView] cellForRowAtIndexPath:[NSIndexPath indexPathForItem:3 inSection:0]] txtField] text];
         
         // Modification de l'objet véhicule en cours de modification
         [_vehicleInEdition setBrand:brand];
@@ -597,10 +583,6 @@ static NSString *kPickerCellID = @"vehicleSetupColorPickerCell";
     //    [visibleCells objectAtIndex:0]
         //TODO:Verification des champs
         //TODO:Création d'un véhicule
-        NSString *brand = [[[[self tableView] cellForRowAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0]] txtField] text];
-        NSString *model = [[[[self tableView] cellForRowAtIndexPath:[NSIndexPath indexPathForItem:1 inSection:0]] txtField] text];
-        NSString *color = [[[[self tableView] cellForRowAtIndexPath:[NSIndexPath indexPathForItem:2 inSection:0]] txtField] text];
-        NSString *numberPlate = [[[[self tableView] cellForRowAtIndexPath:[NSIndexPath indexPathForItem:3 inSection:0]] txtField] text];
         
         [DataManager addVehicle:[[Vehicle alloc] initWithBrand:brand
                                                          model:model
@@ -682,12 +664,11 @@ static NSString *kPickerCellID = @"vehicleSetupColorPickerCell";
 //        i++;
 //    }
     
-    NSString *brand= [[setupTextFields objectAtIndex:0] text];
-    NSString *model= [[setupTextFields objectAtIndex:1] text];
-    NSString *color= [[setupTextFields objectAtIndex:2] text];
+    NSString *brand = [[setupTextFields objectAtIndex:VehicleSetupTableViewCellTypeBrand] text];
+    NSString *model = [[setupTextFields objectAtIndex:VehicleSetupTableViewCellTypeModel] text];
+    NSString *color = [[setupTextFields objectAtIndex:VehicleSetupTableViewCellTypeColor] text];
     
-    if (brand != nil && [brand isEqualToString:@""]==NO && model != nil && [model isEqualToString:@""]==NO && color != nil && [color isEqualToString:@""]==NO)
-    {
+    if (brand != nil && [brand isEqualToString:@""]==NO && model != nil && [model isEqualToString:@""]==NO && color != nil && [color isEqualToString:@""]==NO) {
         shouldEnableButton = YES;
     }
     
