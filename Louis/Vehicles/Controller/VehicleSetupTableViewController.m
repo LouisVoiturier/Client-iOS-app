@@ -63,11 +63,13 @@ static NSString *kPickerCellID = @"vehicleSetupColorPickerCell";
 
 
 
-#pragma mark - View Loading Management
-// *********************************** //
-// ----- VIEW LOADING MANAGEMENT ----- //
-// *********************************** //
 @implementation VehicleSetupTableViewController
+
+#pragma mark - Controller Lifecycle
+// ****************************************** //
+// ---------- CONTROLLER LIFECYCLE ---------- //
+// ****************************************** //
+
 
 - (void)awakeFromNib
 {
@@ -107,9 +109,7 @@ static NSString *kPickerCellID = @"vehicleSetupColorPickerCell";
     [tapGesture setCancelsTouchesInView:NO];
     [[self tableView] addGestureRecognizer:tapGesture];
     
-    
     // ---------- Init Data ---------- //
-    pickerIndexPath = nil;
     pickerDataSource = @[[NSNull null], @"Blanc", @"Noir", @"Gris", @"Rouge",
                          @"Bleu", @"Jaune", @"Vert", @"Marron", @"Autre"];
 }
@@ -124,16 +124,19 @@ static NSString *kPickerCellID = @"vehicleSetupColorPickerCell";
     [[self navigationItem] setLeftBarButtonItem:nil];
     [[self navigationItem] setRightBarButtonItem:nil];
     
+    pickerIndexPath = nil;
     selectedColorIndex = 0;
+    
     //  If view is in edition mode, values from vehicle are put in the text field
-    if ([self isInEdition])
-    {
+    if ([self isInEdition]) {
         [GAI sendScreenViewWithName:@"Edit Car"];
         [self setTitle:[NSLocalizedString(@"Vehicle-Setup-View-Title-Edit", nil) uppercaseString]];
         
-        if (_shouldShowDeleteButton)
-        {
-            [[self navigationItem] setRightBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Vehicle-Setup-View-RightBarButton-Edit", nil) style:UIBarButtonItemStylePlain target:self action:@selector(deleteVehicle)]];
+        if (_shouldShowDeleteButton) {
+            [[self navigationItem] setRightBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Vehicle-Setup-View-RightBarButton-Edit", nil)
+                                                                                          style:UIBarButtonItemStylePlain
+                                                                                         target:self
+                                                                                         action:@selector(deleteVehicle)]];
         }
         
         UITextField *brandTxtField = [setupTextFields objectAtIndex:VehicleSetupTableViewCellTypeBrand];
@@ -150,16 +153,14 @@ static NSString *kPickerCellID = @"vehicleSetupColorPickerCell";
         [plateTxtField setText:[_vehicleInEdition numberPlate]];
         
         [[bigButtonView button] setEnabled:YES];
-    }
-    else
-    {
+    } else {
         [GAI sendScreenViewWithName:@"Add Car"];
+        
         [self setTitle:[NSLocalizedString(@"Vehicle-Setup-View-Title-Add", nil) uppercaseString]];
-        
-        [[self navigationItem] setRightBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Vehicle-Setup-View-RightBarButton-Cancel", nil) style:UIBarButtonItemStylePlain target:self action:@selector(cancelAdd)]];
-        
-        
-        
+        [[self navigationItem] setRightBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Vehicle-Setup-View-RightBarButton-Cancel", nil)
+                                                                                      style:UIBarButtonItemStylePlain
+                                                                                     target:self
+                                                                                     action:@selector(cancelAdd)]];
         [pickerViewColor selectRow:0 inComponent:0 animated:NO];
         [[bigButtonView button] setEnabled:NO];
     }
@@ -187,11 +188,9 @@ static NSString *kPickerCellID = @"vehicleSetupColorPickerCell";
 {
     [super viewDidDisappear:animated];
     
-    if ([self pickerIsShown])
-    {
+    if ([self pickerIsShown]) {
         [[self tableView] beginUpdates];
-        [[self tableView] deleteRowsAtIndexPaths:@[pickerIndexPath]
-                                withRowAnimation:UITableViewRowAnimationMiddle];
+        [[self tableView] deleteRowsAtIndexPaths:@[pickerIndexPath] withRowAnimation:UITableViewRowAnimationMiddle];
         pickerIndexPath = nil;
         [[self tableView] endUpdates];
     }
@@ -205,6 +204,11 @@ static NSString *kPickerCellID = @"vehicleSetupColorPickerCell";
 
 
 
+
+#pragma mark - Object Edition
+// ************************************ //
+// ---------- OBJECT EDITION ---------- //
+// ************************************ //
 - (void)deleteVehicle
 {
     
@@ -212,40 +216,28 @@ static NSString *kPickerCellID = @"vehicleSetupColorPickerCell";
                                                                                      message:NSLocalizedString(@"Vehicle-Delete-Alert-Message", nil)
                                                                               preferredStyle:UIAlertControllerStyleAlert];
     
-    UIAlertAction *actionNO = [UIAlertAction actionWithTitle:NSLocalizedString(@"Vehicle-Delete-Alert-Action-No", nil)
-                                                       style:UIAlertActionStyleCancel handler:nil];
-    
-    UIAlertAction *actionYES = [UIAlertAction actionWithTitle:NSLocalizedString(@"Vehicle-Delete-Alert-Action-Yes", nil)
-                                                        style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action)
+    UIAlertAction *actionNO  = [UIAlertAction actionWithTitle:NSLocalizedString(@"Vehicle-Delete-Alert-Action-No", nil)  style:UIAlertActionStyleCancel      handler:nil];
+    UIAlertAction *actionYES = [UIAlertAction actionWithTitle:NSLocalizedString(@"Vehicle-Delete-Alert-Action-Yes", nil) style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action)
                                 {
                                     [DataManager deleteVehicle:_vehicleInEdition withCompletionBlock:
-                                     ^(User *user, NSHTTPURLResponse *httpResponse, NSError *error)
-                                     {
-                                         if (httpResponse.statusCode != 200)
-                                         {
-                                             [HTTPResponseHandler handleHTTPResponse:httpResponse
-                                                                         withMessage:@""
-                                                                       forController:self
-                                                                      withCompletion:^
-                                              {
-                                                  nil;
-                                              }];
-                                         }
-                                         else
-                                         {
-                                         }
-                                         
-                                     }];
+                                        ^(User *user, NSHTTPURLResponse *httpResponse, NSError *error) {
+                                            if (httpResponse.statusCode != 200) {
+                                                [HTTPResponseHandler handleHTTPResponse:httpResponse
+                                                                            withMessage:@""
+                                                                          forController:self
+                                                                         withCompletion:nil];
+                                            } else {
                                                 if ([_delegate respondsToSelector:@selector(modelListUpdatedForType:atIndexPath:)]) {
                                                     [_delegate modelListUpdatedForType:VehiclesModelUpdateTypeDelete atIndexPath:_vehicleInEditionIndexPath];
                                                 }
+                                            }
+                                        }];
                                 
 //                                    NSMutableArray *userVehiclesMutable = [userVehicles mutableCopy];
 //                                    [userVehiclesMutable removeObjectAtIndex:indexPath.row];
 //                                    userVehicles = [userVehiclesMutable copy];
                                     
                                     [[self tableView] endUpdates];
-                                    
                                     [[self navigationController] popViewControllerAnimated:YES];
                                 }];
     
@@ -253,8 +245,8 @@ static NSString *kPickerCellID = @"vehicleSetupColorPickerCell";
     [deleteConfirmationAlert addAction:actionYES];
     
     [self presentViewController:deleteConfirmationAlert animated:YES completion:
-     ^{
-         [GAI sendScreenViewWithName:@"Delete Car"];
+    ^{
+        [GAI sendScreenViewWithName:@"Delete Car"];
      }];
     deleteConfirmationAlert = nil;
     
@@ -285,12 +277,9 @@ static NSString *kPickerCellID = @"vehicleSetupColorPickerCell";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if ([self pickerIsShown])
-    {
+    if ([self pickerIsShown]){
         return NB_ROWS+1;
-    }
-    else
-    {
+    } else {
         return NB_ROWS;
     }
 }
@@ -300,14 +289,12 @@ static NSString *kPickerCellID = @"vehicleSetupColorPickerCell";
 {
     UITableViewCell *cell;
     
-    if ([self pickerIsShown] && indexPath.row == pickerIndexPath.row)
-    {
+    if ([self pickerIsShown] && indexPath.row == pickerIndexPath.row) {
         // ===== Picker Cell ===== //
      
          VehicleSetupPickerCell *pickerCell = [tableView dequeueReusableCellWithIdentifier:@"vehicleSetupColorPickerCell"];
         
-        if (pickerCell == nil)
-        {
+        if (pickerCell == nil) {
             pickerCell = [[VehicleSetupPickerCell alloc] initWithStyle:-1 reuseIdentifier:kPickerCellID];
         }
         
@@ -317,27 +304,23 @@ static NSString *kPickerCellID = @"vehicleSetupColorPickerCell";
         [[pickerCell colorPicker] selectRow:selectedColorIndex inComponent:0 animated:NO];
         
         cell = pickerCell;
-    }
-    else
-    {
+    } else {
+        // ===== TextField Cell ===== //
+        
         VehicleSetupTableViewCell *textFieldCell = [tableView dequeueReusableCellWithIdentifier:kTxtFieldCellID];
         
-        
         NSUInteger indexForConfiguration = indexPath.row;
-        if ([self pickerIsShown] && indexForConfiguration >= pickerIndexPath.row)
-        {
+        if ([self pickerIsShown] && indexForConfiguration >= pickerIndexPath.row) {
             indexForConfiguration -= 1;
         }
-        [textFieldCell configureCellWithType:indexForConfiguration];
-        
-        [[textFieldCell txtField] setDelegate:self];
-        
         
         if (textFieldCell == nil) {
             textFieldCell = [[VehicleSetupTableViewCell alloc] initWithStyle:-1 reuseIdentifier:kTxtFieldCellID];
             [setupTextFields replaceObjectAtIndex:indexForConfiguration withObject:[textFieldCell txtField]];
         }
         
+        [textFieldCell configureCellWithType:indexForConfiguration];
+        [[textFieldCell txtField] setDelegate:self];
         
         cell = textFieldCell;
     }
@@ -367,13 +350,11 @@ static NSString *kPickerCellID = @"vehicleSetupColorPickerCell";
 {
     if (indexPath.row != pickerIndexPath.row)
     {
-        if (indexPath.row == 2)
-        {
+        if (indexPath.row == VehicleSetupTableViewCellTypeColor) {
             [[self tableView] beginUpdates];
             [[self tableView] deselectRowAtIndexPath:indexPath animated:YES];
             
-            if ([self pickerIsShown])
-            {
+            if ([self pickerIsShown]) {
                 [Tools rotateLayer:[[[[[self tableView] cellForRowAtIndexPath:indexPath] txtField] rightView] layer]
                 fromStartingDegree:M_PI
                    toArrivalDegree:0.0
@@ -381,9 +362,7 @@ static NSString *kPickerCellID = @"vehicleSetupColorPickerCell";
                 [[self tableView] deleteRowsAtIndexPaths:@[pickerIndexPath]
                                         withRowAnimation:UITableViewRowAnimationMiddle];
                 pickerIndexPath = nil;
-            }
-            else if (![self pickerIsShown])
-            {
+            } else if (![self pickerIsShown]) {
                 [Tools rotateLayer:[[[[[self tableView] cellForRowAtIndexPath:indexPath] txtField] rightView] layer]
                 fromStartingDegree:0.0
                    toArrivalDegree:M_PI
@@ -395,12 +374,9 @@ static NSString *kPickerCellID = @"vehicleSetupColorPickerCell";
             }
             
             [tableView endUpdates];
-        }
-        else
-        {
+        } else {
             VehicleSetupTableViewCell *cellSelected = [tableView cellForRowAtIndexPath:indexPath];
-            if ([cellSelected type] != VehicleSetupTableViewCellTypeColor)
-            {
+            if ([cellSelected type] != VehicleSetupTableViewCellTypeColor) {
                 [[cellSelected txtField] becomeFirstResponder];
             }
         }
@@ -466,25 +442,18 @@ static NSString *kPickerCellID = @"vehicleSetupColorPickerCell";
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    if ([textField returnKeyType] == UIReturnKeyNext)
-    {
+    if ([textField returnKeyType] == UIReturnKeyNext) {
         NSUInteger indexOfNextTextField = [setupTextFields indexOfObject:textField]+1;
         VehicleSetupTableViewCell *setupCell = [[self tableView] cellForRowAtIndexPath:[NSIndexPath indexPathForItem:indexOfNextTextField inSection:0]];
         
-        if ([setupCell type] == VehicleSetupTableViewCellTypeColor)
-        {
-//            indexOfNextTextField++;
+        if ([setupCell type] == VehicleSetupTableViewCellTypeColor) {
             [textField resignFirstResponder];
             [[self tableView] selectRowAtIndexPath:[NSIndexPath indexPathForItem:indexOfNextTextField inSection:0] animated:YES scrollPosition:UITableViewScrollPositionMiddle];
             [self tableView:[self tableView] didSelectRowAtIndexPath:[NSIndexPath indexPathForItem:indexOfNextTextField inSection:0]];
-        }
-        else
-        {
+        } else {
             [[setupTextFields objectAtIndex:indexOfNextTextField] becomeFirstResponder];
         }
-    }
-    else if ([textField returnKeyType] == UIReturnKeyDone)
-    {
+    } else if ([textField returnKeyType] == UIReturnKeyDone) {
         [textField resignFirstResponder];
     }
     
@@ -517,8 +486,7 @@ static NSString *kPickerCellID = @"vehicleSetupColorPickerCell";
 {
     NSLog(@"// ===== Ajout/Modification d'une voiture demandée !! ===== //");
     
-    if ([self pickerIsShown])
-    {
+    if ([self pickerIsShown]) {
         [[self tableView] beginUpdates];
         [[self tableView] deleteRowsAtIndexPaths:@[pickerIndexPath]
                                 withRowAnimation:UITableViewRowAnimationMiddle];
@@ -546,20 +514,14 @@ static NSString *kPickerCellID = @"vehicleSetupColorPickerCell";
         [_vehicleInEdition setNumberPlate:numberPlate];
         
         // Envoi au DataManager
-        [DataManager addVehicle:_vehicleInEdition withCompletionBlock:^(User *user, NSHTTPURLResponse *httpResponse, NSError *error)
+        [DataManager editVehicle:_vehicleInEdition withCompletionBlock:^(User *user, NSHTTPURLResponse *httpResponse, NSError *error)
          {
-             if (httpResponse.statusCode != 200)
-             {
+             if (httpResponse.statusCode != 200) {
                  [HTTPResponseHandler handleHTTPResponse:httpResponse
                                              withMessage:@""
                                            forController:self
-                                          withCompletion:^
-                  {
-                      nil;
-                  }];
-             }
-             else
-             {
+                                          withCompletion:nil];
+             } else {
                  if ([_delegate respondsToSelector:@selector(modelListUpdatedForType:atIndexPath:)]) {
                      [_delegate modelListUpdatedForType:VehiclesModelUpdateTypeEdit atIndexPath:nil];
                  }
@@ -568,10 +530,8 @@ static NSString *kPickerCellID = @"vehicleSetupColorPickerCell";
         
         
 //        [[self navigationController] popToRootViewControllerAnimated:YES];
-            [[self navigationController] popViewControllerAnimated:YES];
-    }
-    else
-    {
+        [[self navigationController] popViewControllerAnimated:YES];
+    } else {
         //TODO: récupération des textFields et de leur texte
     //    NSArray *visibleCells = [[self tableView] visibleCells];
     //    [visibleCells objectAtIndex:0]
@@ -584,18 +544,12 @@ static NSString *kPickerCellID = @"vehicleSetupColorPickerCell";
                                                 andNumberPlate:numberPlate] withCompletionBlock:
          ^(User *user, NSHTTPURLResponse *httpResponse, NSError *error)
         {
-            if (httpResponse.statusCode != 200)
-            {
+            if (httpResponse.statusCode != 200) {
                 [HTTPResponseHandler handleHTTPResponse:httpResponse
                                             withMessage:@""
                                           forController:self
-                                         withCompletion:^
-                 {
-                     nil;
-                 }];
-            }
-            else
-            {
+                                         withCompletion:nil];
+            } else {
                 if ([_delegate respondsToSelector:@selector(modelListUpdatedForType:atIndexPath:)]) {
                     [_delegate modelListUpdatedForType:VehiclesModelUpdateTypeAdd atIndexPath:nil];
                 }
@@ -604,8 +558,6 @@ static NSString *kPickerCellID = @"vehicleSetupColorPickerCell";
         
         [self dismissViewControllerAnimated:YES completion:^{}];
     }
-    
-
 }
 
 
@@ -624,12 +576,6 @@ static NSString *kPickerCellID = @"vehicleSetupColorPickerCell";
 }
 
 
-/**
- *  Indicates wether the view is in edition or not
- *  View can be in edition if an object was passed trhough previous view controller
- *
- *  @return YES if view is currently editing a vehicle, NO otherwise
- */
 - (BOOL)isInEdition
 {
     return _vehicleInEdition != nil;
@@ -661,7 +607,6 @@ static NSString *kPickerCellID = @"vehicleSetupColorPickerCell";
     
     if (brand != nil && [brand isEqualToString:@""]==NO && model != nil && [model isEqualToString:@""]==NO && color != nil && [color isEqualToString:@""]==NO) {
         shouldEnableButton = YES;
-    }
     
     // For NSDictionary
     //    for (UITextField *textField in setupTextFields)
@@ -676,8 +621,7 @@ static NSString *kPickerCellID = @"vehicleSetupColorPickerCell";
 //        {
 //            shouldEnableButton = YES;
 //        }
-    else
-    {
+    } else {
         shouldEnableButton = NO;
     }
 

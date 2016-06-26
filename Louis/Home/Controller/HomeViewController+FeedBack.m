@@ -24,13 +24,20 @@
     // Date Management
     //
     NSDate *orderDate = [[currentOrder checkIn] date];
-    NSString *orderDateString = [NSDateFormatter localizedStringFromDate:orderDate dateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterMediumStyle];
+    NSString *orderDateString = [NSDateFormatter localizedStringFromDate:orderDate
+                                                               dateStyle:NSDateFormatterShortStyle
+                                                               timeStyle:NSDateFormatterMediumStyle];
+//    Date should be format in same language as the one used by the app.
 //    NSDateFormatter *dateFormatter = [NSDateFormatter dateFormatFromTemplate: options: locale:]
     
     
     // Price
     //
     NSString *priceString = [NSString stringWithFormat:@"%.2f", [[[currentOrder price] value] floatValue]];
+    
+    
+    // Code promo
+    // If a code promo was used to pay all or part of the order, information about value should be in order or in price.
     
     
     // Card Name

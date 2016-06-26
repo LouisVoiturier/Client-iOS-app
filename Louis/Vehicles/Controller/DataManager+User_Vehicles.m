@@ -24,7 +24,7 @@
 }
 
 
-+ (void)modifyVehicle:(Vehicle *)vehicle withCompletionBlock:(dataPostCompletion)completionBlock
++ (void)editVehicle:(Vehicle *)vehicle withCompletionBlock:(dataPostCompletion)completionBlock
 {
     [DataManager putData:[DataManager dataForObject:vehicle] toCurrentUserForKey:@"vehicle" withCompletionBlock:completionBlock];
 }

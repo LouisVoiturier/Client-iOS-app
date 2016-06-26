@@ -14,7 +14,7 @@
 
 + (NSArray *)userVehicles;
 + (void)addVehicle:   (Vehicle *)vehicle withCompletionBlock:(dataPostCompletion)completionBlock;
-+ (void)modifyVehicle:(Vehicle *)vehicle withCompletionBlock:(dataPostCompletion)completionBlock;
++ (void)editVehicle:(Vehicle *)vehicle withCompletionBlock:(dataPostCompletion)completionBlock;
 + (void)deleteVehicle:(Vehicle *)vehicle withCompletionBlock:(dataPostCompletion)completionBlock;
 
 @end

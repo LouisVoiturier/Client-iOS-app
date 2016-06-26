@@ -21,7 +21,7 @@
 
 static NSString *const kStripeAPIKey = @"YOUR_STRIPE_API_KEY_HERE";
 static NSString *const kGoogleAPIKey = @"YOUR_GOOGLE_API_KEY_HERE";
-static NSString *const kGATrackingID = @"YOUR_GOOGLE_ANALYTICS_ID_KEY_HERE";
+static NSString *const kGATrackingID = @"YOUR_GOOGLE_ANALYTICS_ID_HERE";
 static BOOL applicationBecomActiveIsCalledOnce = YES;
 static BOOL hasLogin;
 
