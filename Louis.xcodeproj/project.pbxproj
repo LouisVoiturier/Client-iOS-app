@@ -75,6 +75,7 @@
 		527C447D1BDE42D1008C787A /* CommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 527C447C1BDE42D1008C787A /* CommentView.m */; };
 		527E5ADF1BD693BE00831ADA /* Order.m in Sources */ = {isa = PBXBuildFile; fileRef = 527E5ADE1BD693BE00831ADA /* Order.m */; };
 		527E5AE21BD693D200831ADA /* Checkin.m in Sources */ = {isa = PBXBuildFile; fileRef = 527E5AE11BD693D200831ADA /* Checkin.m */; };
+		5281075A1D1F86DC00A35213 /* VehicleColorsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 528107591D1F86DC00A35213 /* VehicleColorsDataSource.m */; };
 		5284AFC01BCED12100107F40 /* UIViewController+RevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5284AFBF1BCED12100107F40 /* UIViewController+RevealViewController.m */; };
 		52A901BD1BC7CE2900C29198 /* VehicleSetupPickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A901BC1BC7CE2900C29198 /* VehicleSetupPickerCell.m */; };
 		52ADD8ED1BD79730003FD2F5 /* HomeViewController+FeedBack.m in Sources */ = {isa = PBXBuildFile; fileRef = 52ADD8EC1BD79730003FD2F5 /* HomeViewController+FeedBack.m */; };
@@ -268,6 +269,8 @@
 		527E5ADE1BD693BE00831ADA /* Order.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Order.m; path = Order/Model/Order.m; sourceTree = "<group>"; };
 		527E5AE01BD693D200831ADA /* Checkin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Checkin.h; path = Order/Model/Checkin.h; sourceTree = "<group>"; };
 		527E5AE11BD693D200831ADA /* Checkin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Checkin.m; path = Order/Model/Checkin.m; sourceTree = "<group>"; };
+		528107581D1F86DC00A35213 /* VehicleColorsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VehicleColorsDataSource.h; sourceTree = "<group>"; };
+		528107591D1F86DC00A35213 /* VehicleColorsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VehicleColorsDataSource.m; sourceTree = "<group>"; };
 		5284AFBE1BCED12100107F40 /* UIViewController+RevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = "UIViewController+RevealViewController.h"; path = "Supporting Files/Categories/UIViewController+RevealViewController.h"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		5284AFBF1BCED12100107F40 /* UIViewController+RevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = "UIViewController+RevealViewController.m"; path = "Supporting Files/Categories/UIViewController+RevealViewController.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		529DCB781BC84B900072F020 /* UIFont+Louis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIFont+Louis.h"; path = "Supporting Files/Categories/UIFont+Louis.h"; sourceTree = "<group>"; };
@@ -710,6 +713,8 @@
 		52B4C7AA1BBED0E4009372D8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				528107581D1F86DC00A35213 /* VehicleColorsDataSource.h */,
+				528107591D1F86DC00A35213 /* VehicleColorsDataSource.m */,
 				52B4C7AB1BBED0E4009372D8 /* Vehicle.h */,
 				52B4C7AC1BBED0E4009372D8 /* Vehicle.m */,
 			);
@@ -1359,6 +1364,7 @@
 				422B695D1BDE34D000F45AEC /* Parking.m in Sources */,
 				42C067F31BD13DE700E9F981 /* InCourseBottomView.m in Sources */,
 				42FE7B611BCFBB0900789D97 /* ResearchPopupView.m in Sources */,
+				5281075A1D1F86DC00A35213 /* VehicleColorsDataSource.m in Sources */,
 				5242598B1BBEE6D000D8F7C2 /* SignUpProfileTableViewCell.m in Sources */,
 				AA9F28581BE3B61600220DFE /* ProfileChangePwdTableViewController.m in Sources */,
 				524259841BBEE6D000D8F7C2 /* SignInTableTableViewController.m in Sources */,
