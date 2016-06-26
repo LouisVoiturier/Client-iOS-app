@@ -10,10 +10,17 @@
 @class Vehicle;
 
 
-@protocol VehiculeSetupDelegate <NSObject>
+@protocol VehicleSetupDelegate <NSObject>
+
+typedef NS_ENUM(NSUInteger, VehiclesModelUpdateType)
+{
+    VehiclesModelUpdateTypeAdd,
+    VehiclesModelUpdateTypeEdit,
+    VehiclesModelUpdateTypeDelete
+};
 
 @required
-- (void)modelListUpdatedAtIndexPath:(NSIndexPath *)indexUpdated;
+- (void)modelListUpdatedForType:(VehiclesModelUpdateType)updateType atIndexPath:(NSIndexPath *)indexUpdated;
 
 @end
 
@@ -27,7 +34,7 @@
 
 @property (strong, nonatomic) Vehicle *vehicleInEdition;
 @property (strong, nonatomic) NSIndexPath *vehicleInEditionIndexPath;
-@property (strong, nonatomic) id <VehiculeSetupDelegate> delegate;
+@property (strong, nonatomic) id <VehicleSetupDelegate> delegate;
 @property (nonatomic) BOOL shouldShowDeleteButton;
 
 @end

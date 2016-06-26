@@ -233,15 +233,12 @@ static NSString *kPickerCellID = @"vehicleSetupColorPickerCell";
                                          }
                                          else
                                          {
-                                             dispatch_async(dispatch_get_main_queue(),
-                                                            ^{
-                                                                [[NSNotificationCenter defaultCenter] postNotificationName:@"vehiclesListUpdated"
-                                                                                                                    object:nil
-                                                                                                                  userInfo:@{@"updateType":@"DELETE", @"modifiedRowIndex":[NSString stringWithFormat:@"%ld", (long)_vehicleInEditionIndexPath.row]}];
-                                                            });
                                          }
                                          
                                      }];
+                                                if ([_delegate respondsToSelector:@selector(modelListUpdatedForType:atIndexPath:)]) {
+                                                    [_delegate modelListUpdatedForType:VehiclesModelUpdateTypeDelete atIndexPath:_vehicleInEditionIndexPath];
+                                                }
                                 
 //                                    NSMutableArray *userVehiclesMutable = [userVehicles mutableCopy];
 //                                    [userVehiclesMutable removeObjectAtIndex:indexPath.row];
@@ -563,12 +560,9 @@ static NSString *kPickerCellID = @"vehicleSetupColorPickerCell";
              }
              else
              {
-                 dispatch_async(dispatch_get_main_queue(),
-                                ^{
-                                    [[NSNotificationCenter defaultCenter] postNotificationName:@"vehiclesListUpdated"
-                                                                                        object:nil
-                                                                                      userInfo:@{@"updateType":@"EDIT"}];
-                                });
+                 if ([_delegate respondsToSelector:@selector(modelListUpdatedForType:atIndexPath:)]) {
+                     [_delegate modelListUpdatedForType:VehiclesModelUpdateTypeEdit atIndexPath:nil];
+                 }
              }
          }];
         
@@ -602,12 +596,9 @@ static NSString *kPickerCellID = @"vehicleSetupColorPickerCell";
             }
             else
             {
-                dispatch_async(dispatch_get_main_queue(),
-                ^{
-                    [[NSNotificationCenter defaultCenter] postNotificationName:@"vehiclesListUpdated"
-                                                                        object:nil
-                                                                      userInfo:@{@"updateType":@"ADD"}];
-                });
+                if ([_delegate respondsToSelector:@selector(modelListUpdatedForType:atIndexPath:)]) {
+                    [_delegate modelListUpdatedForType:VehiclesModelUpdateTypeAdd atIndexPath:nil];
+                }
             }
          }];
         

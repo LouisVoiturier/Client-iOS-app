@@ -54,10 +54,6 @@
     [[footerView button] addTarget:self action:@selector(addVehicleButtonTouched:) forControlEvents:UIControlEventTouchUpInside];
     [self showAddButtonIfPossible];
     [[self tableView] setTableFooterView:footerView];
-    
-    // Notification ajout véhicule
-    NSNotificationCenter *defaultCenter = [NSNotificationCenter defaultCenter];
-    [defaultCenter addObserver:self selector:@selector(vehiclesListUpdated:) name:@"vehiclesListUpdated" object:nil];
 }
 
 
@@ -86,43 +82,39 @@
 
 
 
-//- (void)vehiculeSetupViewController:(VehicleSetupTableViewController *)viewController addedItem
-//{
-//    
-//}
-
-- (void)vehiclesListUpdated:(NSNotification *)notification
+- (void)modelListUpdatedForType:(VehiclesModelUpdateType)updateType atIndexPath:(NSIndexPath *)indexUpdated
 {
-    if ([[notification name] isEqualToString:@"vehiclesListUpdated"])
-    {
-        NSDictionary *infos = [notification userInfo];
-        NSString *updateType = [infos valueForKey:@"updateType"];
+    dispatch_async(dispatch_get_main_queue(),
+    ^{
+        switch (updateType) {
+            case VehiclesModelUpdateTypeAdd:
+                [[self tableView] beginUpdates];
+                [[self tableView] insertRowsAtIndexPaths:@[[NSIndexPath indexPathForItem:[userVehicles count] inSection:0]]
+                                        withRowAnimation:UITableViewRowAnimationRight];
+                userVehicles = [DataManager userVehicles];
+                [[self tableView] endUpdates];
+                break;
+           
+            case VehiclesModelUpdateTypeEdit:
+                userVehicles = [DataManager userVehicles];
+                [[self tableView] reloadData];
+                break;
+            
+            case VehiclesModelUpdateTypeDelete:
+                NSAssert(indexUpdated != nil, @"***** ERROR : indexUpdated SHOULD NOT be nil for update type 'Delete'!");
+                [[self tableView] beginUpdates];
+                [[self tableView] deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForItem:indexUpdated.row inSection:0]]
+                                        withRowAnimation:UITableViewRowAnimationLeft];
+                userVehicles = [DataManager userVehicles];
+                [[self tableView] endUpdates];
+                break;
+                
+            default: NSLog(@"***** ERROR : Unknow type of update!");
+                break;
+        }
         
-        if ([updateType isEqualToString:@"ADD"])
-        {
-            [[self tableView] beginUpdates];
-            [[self tableView] insertRowsAtIndexPaths:@[[NSIndexPath indexPathForItem:[userVehicles count] inSection:0]]
-                                    withRowAnimation:UITableViewRowAnimationRight];
-            userVehicles = [DataManager userVehicles];
-            [[self tableView] endUpdates];
-        }
-        else if ([updateType isEqualToString:@"EDIT"])
-        {
-            userVehicles = [DataManager userVehicles];
-            [[self tableView] reloadData];
-        }
-        else if ([updateType isEqualToString:@"DELETE"])
-        {
-            NSInteger deletedRowIndex = [[infos valueForKey:@"modifiedRowIndex"] integerValue];
-            [[self tableView] beginUpdates];
-            [[self tableView] deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForItem:deletedRowIndex inSection:0]]
-                                    withRowAnimation:UITableViewRowAnimationLeft];
-            userVehicles = [DataManager userVehicles];
-            [[self tableView] endUpdates];
-        }
-    }
-    
-    [self showAddButtonIfPossible];
+        [self showAddButtonIfPossible];
+    });
 }
 
 

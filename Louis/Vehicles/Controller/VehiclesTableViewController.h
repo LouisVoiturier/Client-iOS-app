@@ -10,7 +10,7 @@
 #import "VehicleSetupTableViewController.h"
 
 
-@interface VehiclesTableViewController : UITableViewController <VehiculeSetupDelegate>
+@interface VehiclesTableViewController : UITableViewController <VehicleSetupDelegate>
 
 // ====================== //
 // ----- Properties ----- //
