@@ -98,7 +98,6 @@ static NSString *kPickerCellID = @"vehicleSetupColorPickerCell";
     
     // ---------- Init Data ---------- //
     pickerIndexPath = nil;
-    selectedColorIndex = -1;
     pickerDataSource = @[[NSNull null], @"Blanc", @"Noir", @"Gris", @"Rouge",
                          @"Bleu", @"Jaune", @"Vert", @"Marron", @"Autre"];
 }
@@ -113,6 +112,7 @@ static NSString *kPickerCellID = @"vehicleSetupColorPickerCell";
     [[self navigationItem] setLeftBarButtonItem:nil];
     [[self navigationItem] setRightBarButtonItem:nil];
     
+    selectedColorIndex = 0;
     //  If view is in edition mode, values from vehicle are put in the text field
     if ([self isInEdition])
     {
@@ -131,11 +131,9 @@ static NSString *kPickerCellID = @"vehicleSetupColorPickerCell";
         
         [[brandCell txtField] setText:[_vehicleInEdition brand]];
         [[modelCell txtField] setText:[_vehicleInEdition model]];
-        NSInteger indexOfObject = [pickerDataSource indexOfObject:[_vehicleInEdition color]];
-//        BOOL contain = [pickerDataSource containsObject:[_vehicleInEdition color]];
-        if (indexOfObject != NSNotFound)
-        {
-            [[colorCell txtField] setText:[pickerDataSource objectAtIndex:indexOfObject]];
+        selectedColorIndex = [pickerDataSource indexOfObject:[_vehicleInEdition color]];
+        if (selectedColorIndex != NSNotFound) {
+            [colorTxtField setText:[pickerDataSource objectAtIndex:selectedColorIndex]];
         }
 
         [[plateCell txtField] setText:[_vehicleInEdition numberPlate]];
@@ -158,6 +156,7 @@ static NSString *kPickerCellID = @"vehicleSetupColorPickerCell";
             }
         }
         
+        [pickerViewColor selectRow:0 inComponent:0 animated:NO];
         [[bigButtonView button] setEnabled:NO];
     }
 }
@@ -323,14 +322,7 @@ static NSString *kPickerCellID = @"vehicleSetupColorPickerCell";
         [[pickerCell colorPicker] setDataSource:self];
         [[pickerCell colorPicker] setDelegate:self];
         [pickerCell setSelectionStyle:UITableViewCellSelectionStyleNone];
-        if ([self isInEdition])
-        {
-            NSInteger indexOfObject = [pickerDataSource indexOfObject:[_vehicleInEdition color]];
-            if (indexOfObject != NSNotFound)
-            {
-                [[pickerCell colorPicker] selectRow:indexOfObject inComponent:0 animated:NO];
-            }
-        }
+        [[pickerCell colorPicker] selectRow:selectedColorIndex inComponent:0 animated:NO];
         
         cell = pickerCell;
     }
@@ -458,14 +450,12 @@ static NSString *kPickerCellID = @"vehicleSetupColorPickerCell";
       didSelectRow:(NSInteger)row
        inComponent:(NSInteger)component
 {
+    selectedColorIndex = row;
     VehicleSetupTableViewCell *cellColor = [[self tableView] cellForRowAtIndexPath:[NSIndexPath indexPathForItem:pickerIndexPath.row-1 inSection:0]];
     
-    if ([[pickerDataSource objectAtIndex:row] isEqual:[NSNull null]] == NO)
-    {
-        [[cellColor txtField] setText:[pickerDataSource objectAtIndex:row]];
-    }
-    else
-    {
+    if ([[pickerDataSource objectAtIndex:selectedColorIndex] isEqual:[NSNull null]] == NO) {
+        [[cellColor txtField] setText:[pickerDataSource objectAtIndex:selectedColorIndex]];
+    } else {
         [[cellColor txtField] setText:nil];
     }
     
@@ -477,8 +467,7 @@ static NSString *kPickerCellID = @"vehicleSetupColorPickerCell";
              titleForRow:(NSInteger)row
             forComponent:(NSInteger)component
 {
-    if ([[pickerDataSource objectAtIndex:row] isEqual:[NSNull null]] == NO)
-    {
+    if ([[pickerDataSource objectAtIndex:row] isEqual:[NSNull null]] == NO) {
         return [pickerDataSource objectAtIndex:row];
     }
     
