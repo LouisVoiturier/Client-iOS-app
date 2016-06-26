@@ -22,6 +22,5 @@ typedef void(^valetGetCompletion)(BOOL isAvailable);
 +(instancetype)sharedInstance;
 +(void)requestAValetWithLocation:(CLLocationCoordinate2D)userLocation completion:(valetGetCompletion)compbloc;
 +(NSArray *)getAllValetsCoords;
-+(void)setETA:(CGFloat)eta toValetAtIndex:(NSInteger)index;
 
 @end

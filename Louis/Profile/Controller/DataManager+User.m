@@ -194,7 +194,7 @@
         {
             [HTTPResponseHandler handleHTTPResponse:httpResponse
                                         withMessage:@""
-                                      forController:self
+                                      forController:nil
                                      withCompletion:^
              {
                  nil;
