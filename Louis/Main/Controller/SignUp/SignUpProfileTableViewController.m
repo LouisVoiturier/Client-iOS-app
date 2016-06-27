@@ -17,6 +17,7 @@
 #import "SignUpProfilePickerTableViewCell.h"
 #import <AssetsLibrary/AssetsLibrary.h>
 #import "KeychainWrapper.h"
+#import "VehicleColorsDataSource.h"
 
 // TableView
 #define NB_SECTION 2
@@ -146,7 +147,7 @@ typedef NS_ENUM (NSInteger, TypedefEnumProfileCellType) {
 {
     [super viewWillAppear:animated];
     [[self navigationController] setNavigationBarHidden:NO animated:NO];
-    
+    selectedColorIndex = 0;
     //suppression bouton back
 //    self.navigationItem.leftBarButtonItem=nil;
 //    self.navigationItem.hidesBackButton = YES;
@@ -296,8 +297,6 @@ typedef NS_ENUM (NSInteger, TypedefEnumProfileCellType) {
     // ===== Data du pickerview pour le choix des couleurs ===== //
     pickerIndexPath = nil;
     selectedColorIndex = -1;
-    pickerDataSource = @[@" ",@"Blanc", @"Noir", @"Gris", @"Rouge", @"Bleu",
-                         @"Jaune", @"Vert", @"Marron", @"Autre"];
     
 }
 
@@ -844,33 +843,24 @@ typedef NS_ENUM (NSInteger, TypedefEnumProfileCellType) {
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
-    return [pickerDataSource count];
+    return [VehicleColorsDataSource numberOfColors];
 }
 
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
+    selectedColorIndex = row;
+    aColorHasBeenSelected = row == 0 ? NO : YES ;
     UITextField *carColorTextField = [[_workingArrayForCells objectAtIndex:TypedefEnumProfileCellTypeCarColor] objectForKey:kTextField];
-    
-    if (row == 0)
-    {
-        [carColorTextField setText:@""];
-        aColorHasBeenSelected = NO ;
-    }
-    else
-    {
-        [carColorTextField setText:[pickerDataSource objectAtIndex:row]];
-        aColorHasBeenSelected = YES ;
-    }
-   
-    [self setEnableOrDisableToFooterButton:nil andRealTextFieldContent:nil];
+    [carColorTextField setText:[VehicleColorsDataSource localizedNameForColorIndex:selectedColorIndex]];
 
+    [self setEnableOrDisableToFooterButton:nil andRealTextFieldContent:nil];
 }
 
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
-    return [pickerDataSource objectAtIndex:row];
+    return [VehicleColorsDataSource localizedNameForColorIndex:row];
 }
 
 
