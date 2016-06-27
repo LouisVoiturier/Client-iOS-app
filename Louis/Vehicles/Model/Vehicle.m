@@ -76,7 +76,7 @@
 
 -(NSString *)infosResume
 {
-    return [NSString stringWithFormat:@"%@ %@ %@", self.brand, self.model, self.color];
+    return [NSString stringWithFormat:@"%@ %@ - %@", self.brand, self.model, [VehicleColorsDataSource colorLocalizedNameForColorKeyName:self.color]];
 }
 
 

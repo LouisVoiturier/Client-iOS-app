@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "VehicleColorsDataSource.h"
 
 @interface Vehicle : NSObject
 
