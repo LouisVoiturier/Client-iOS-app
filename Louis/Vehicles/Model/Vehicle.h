@@ -12,9 +12,9 @@
 @interface Vehicle : NSObject
 
 
-// ====================== //
-// ----- Properties ----- //
-// ====================== //
+/* **********
+   Properties
+   ********** */
 
 @property (nonatomic, copy) NSString *vehicleID;
 @property (nonatomic, copy) NSString *brand;
@@ -24,16 +24,16 @@
 
 
 
-// =================== //
-// ----- Methods ----- //
-// =================== //
+/* *******
+   Methods
+   ******* */
 
-// ===== Methods for DataManager ===== //
+/* Methods for DataManager */
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 - (NSDictionary *)dictionary;
 
 
-// ===== Methods for ViewControllers ===== //
+/* Methods for ViewControllers */
 - (instancetype)initWithBrand:(NSString *)brand
                         model:(NSString *)model
                         color:(NSString *)color
