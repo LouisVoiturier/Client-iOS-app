@@ -26,7 +26,8 @@
 
 + (void)editVehicle:(Vehicle *)vehicle withCompletionBlock:(dataPostCompletion)completionBlock
 {
-    [DataManager putData:[DataManager dataForObject:vehicle] toCurrentUserForKey:@"vehicle" withCompletionBlock:completionBlock];
+    //TODO: change method to "putData" when API is ready
+    [DataManager postData:[DataManager dataForObject:vehicle] toCurrentUserForKey:@"vehicle" withCompletionBlock:completionBlock];
 }
 
 
