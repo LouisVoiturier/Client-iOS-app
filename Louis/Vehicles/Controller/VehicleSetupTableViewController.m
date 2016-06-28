@@ -498,13 +498,6 @@ static NSString *kPickerCellID = @"vehicleSetupColorPickerCell";
     NSString *numberPlate = [[setupTextFields objectAtIndex:VehicleSetupTableViewCellTypePlate] text];
   
     if ([self isInEdition]) {
-        //TODO: récupération des textFields et de leur texte
-        //    NSArray *visibleCells = [[self tableView] visibleCells];
-        //    [visibleCells objectAtIndex:0]
-        //TODO:Verification des champs
-        //TODO:Création d'un véhicule
-        
-        // Modification de l'objet véhicule en cours de modification
         [_vehicleInEdition setBrand:brand];
         [_vehicleInEdition setModel:model];
         [_vehicleInEdition setColor:color];
@@ -529,12 +522,6 @@ static NSString *kPickerCellID = @"vehicleSetupColorPickerCell";
 //        [[self navigationController] popToRootViewControllerAnimated:YES];
         [[self navigationController] popViewControllerAnimated:YES];
     } else {
-        //TODO: récupération des textFields et de leur texte
-    //    NSArray *visibleCells = [[self tableView] visibleCells];
-    //    [visibleCells objectAtIndex:0]
-        //TODO:Verification des champs
-        //TODO:Création d'un véhicule
-        
         [DataManager addVehicle:[[Vehicle alloc] initWithBrand:brand
                                                          model:model
                                                          color:color
@@ -590,36 +577,12 @@ static NSString *kPickerCellID = @"vehicleSetupColorPickerCell";
 {
     BOOL shouldEnableButton= NO;
     
-    // For NSArray
-//    while (i < [setupTextFields count]-1
-//           && [[setupTextFields objectAtIndex:i] text] != nil
-//           && [[[setupTextFields objectAtIndex:i] text]isEqualToString:@""] == NO)
-//    {
-//        i++;
-//    }
-    
     NSString *brand = [[setupTextFields objectAtIndex:VehicleSetupTableViewCellTypeBrand] text];
     NSString *model = [[setupTextFields objectAtIndex:VehicleSetupTableViewCellTypeModel] text];
     NSString *color = [[setupTextFields objectAtIndex:VehicleSetupTableViewCellTypeColor] text];
     
     if (brand != nil && [brand isEqualToString:@""]==NO && model != nil && [model isEqualToString:@""]==NO && color != nil && [color isEqualToString:@""]==NO) {
         shouldEnableButton = YES;
-    
-    // For NSDictionary
-    //    for (UITextField *textField in setupTextFields)
-    //    {
-    //        if ([textField text] != nil && [[textField text] isEqualToString:@""] == NO)
-    //        {
-    //            i++;
-    //        }
-    //    }
-    // Array : == 3 // Dictionary : >= 3
-//        if (i >= 2 /*&& selectedColorIndex != -1*/)
-//        {
-//            shouldEnableButton = YES;
-//        }
-    } else {
-        shouldEnableButton = NO;
     }
 
     [[bigButtonView button] setEnabled:shouldEnableButton];
@@ -664,13 +627,5 @@ static NSString *kPickerCellID = @"vehicleSetupColorPickerCell";
 //    
 //    return YES;
 //}
-
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 
 @end
