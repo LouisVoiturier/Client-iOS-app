@@ -12,9 +12,9 @@
 
 @interface VehiclesTableViewController : UITableViewController <VehicleSetupDelegate>
 
-// ====================== //
-// ----- Properties ----- //
-// ====================== //
+/* **********
+   Properties
+   ********** */
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *menuButton;
 
 @end

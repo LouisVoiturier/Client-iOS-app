@@ -36,20 +36,18 @@
     [self setTitle:[NSLocalizedString(@"Vehicles-View-Title", nil) uppercaseString]];
     [[self tableView] setBackgroundColor:[UIColor louisBackgroundApp]];
     
-    // ===== Menu Configuration ===== //
+    /* Menu Configuration */
     [self configureSWRevealViewControllerForViewController:self
                                             withMenuButton:[self menuButton]];
     
-    // ===== Back Button ===== //
+    /* Back Button */
     UIBarButtonItem *backButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"BackButtonItem-Title", nil) style:UIBarButtonItemStylePlain target:nil action:nil];
     [[self navigationItem] setBackBarButtonItem:backButtonItem];
     
-    
-    // ===== Data ===== //
+    /* Data */
     userVehicles = [DataManager userVehicles];
     
-    
-    // ===== Button "Add a new vehicle" ===== //
+    /* Button "Add a new vehicle" */
     footerView = [BigButtonView bigButtonViewTypeAltWithTitle:NSLocalizedString(@"Vehicles-Button-Title", nil) andImage:[UIImage imageNamed:@"add_icon"]];
     [[footerView button] addTarget:self action:@selector(addVehicleButtonTouched:) forControlEvents:UIControlEventTouchUpInside];
     [self showAddButtonIfPossible];
@@ -259,14 +257,16 @@
         [vehicleSetupViewController setDelegate:self];
     }
     
-    if (vehicleToEditIndexPath == nil) // Add
+    if (vehicleToEditIndexPath == nil)
     {
+        /* Add */
         UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:vehicleSetupViewController];
         [vehicleSetupViewController setVehicleInEdition:nil];
         [self presentViewController:navController animated:YES completion:^{}];
     }
-    else // Edit
+    else
     {
+        /* Edit */
         [vehicleSetupViewController setShouldShowDeleteButton:([userVehicles count] > 1)];
         [vehicleSetupViewController setVehicleInEdition:[userVehicles objectAtIndex:vehicleToEditIndexPath.row]];
         [vehicleSetupViewController setVehicleInEditionIndexPath:vehicleToEditIndexPath];
