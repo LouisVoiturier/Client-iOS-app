@@ -14,25 +14,20 @@
 
 
 
-
-
-#pragma mark - ##### Define Macro #####
-// ********************************** //
-// ---------- DEFINE MACRO ---------- //
-// ********************************** //
-
 #define NB_SECTIONS 1
 #define NB_ROWS 4
+#pragma mark - Macros
+/* ******
+   MACROS
+   ****** */
 #define NB_COMPONENT 1
 
 
 
-
-
 #pragma mark - Static Properties
-// *************************************** //
-// ---------- STATIC PROPERTIES ---------- //
-// *************************************** //
+/* *****************
+   STATIC PROPERTIES
+   ***************** */
 
 /** Cell identifier for standard cell (UILabel + UITextField) */
 static NSString *kTxtFieldCellID = @"vehicleSetupTxtFieldCell";
@@ -44,9 +39,9 @@ static NSString *kPickerCellID = @"vehicleSetupColorPickerCell";
 
 
 #pragma mark - Private Vars & Properties
-// *********************************************** //
-// ---------- PRIVATE VARS & PROPERTIES ---------- //
-// *********************************************** //
+/* *************************
+   PRIVATE VARS & PROPERTIES
+   ************************* */
 
 @interface VehicleSetupTableViewController ()
 {
@@ -66,10 +61,9 @@ static NSString *kPickerCellID = @"vehicleSetupColorPickerCell";
 @implementation VehicleSetupTableViewController
 
 #pragma mark - Controller Lifecycle
-// ****************************************** //
-// ---------- CONTROLLER LIFECYCLE ---------- //
-// ****************************************** //
-
+/* ********************
+   CONTROLLER LIFECYCLE
+   ******************** */
 
 - (void)awakeFromNib
 {
@@ -91,25 +85,22 @@ static NSString *kPickerCellID = @"vehicleSetupColorPickerCell";
 {
     [super viewDidLoad];
     
-    // ---------- Init UI ---------- //
     [[self tableView] setBackgroundColor:[UIColor louisBackgroundApp]];
     
-    // ----- Save Button -----
+    /* Save Button */
     bigButtonView = [BigButtonView bigButtonViewTypeMainWithTitle:NSLocalizedString(@"Vehicle-Setup-Button-Title", nil)];
     [[bigButtonView button] addTarget:self action:@selector(saveVehicleButtonTouched:) forControlEvents:UIControlEventTouchUpInside];
     [[self tableView] setTableFooterView:bigButtonView];
     
-    // ----- Row Height -----
-    // Needed for the color picker cell
+    /* Row Height */
+    /* Needed for the color picker cell */
     [[self tableView] setEstimatedRowHeight:44.f];
     [[self tableView] setRowHeight:UITableViewAutomaticDimension];
 
-    // ----- Gesture Recognizer -----
+    /* Gesture Recognizer */
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGestureHandle)];
     [tapGesture setCancelsTouchesInView:NO];
     [[self tableView] addGestureRecognizer:tapGesture];
-    
-    // ---------- Init Data ---------- //
     pickerDataSource = @[[NSNull null], @"Blanc", @"Noir", @"Gris", @"Rouge",
                          @"Bleu", @"Jaune", @"Vert", @"Marron", @"Autre"];
 }
