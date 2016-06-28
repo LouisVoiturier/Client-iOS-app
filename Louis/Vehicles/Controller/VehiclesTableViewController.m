@@ -9,11 +9,14 @@
 #import "VehiclesTableViewController.h"
 #import "Common.h"
 #import "DataManager+User_Vehicles.h"
-#import "Vehicle.h"
 
 #define NB_SECTIONS 1
 #define NB_MIN_VEHICLE 1
 #define NB_MAX_VEHICLE 5
+
+
+static NSArray *pickerDataSource;
+static NSDictionary *pickerColorLocalizedNames;
 
 
 @interface VehiclesTableViewController ()
@@ -59,6 +62,7 @@
 {
     [super viewWillAppear:animated];
     [GAI sendScreenViewWithName:@"Cars"];
+    [self showAddButtonIfPossible];
 }
 
 
@@ -136,7 +140,7 @@
     {
          Vehicle *vehicleForRow = [userVehicles objectAtIndex:indexPath.row];
         [[cell textLabel] setTextColor:[UIColor louisTitleAndTextColor]];
-        [[cell textLabel] setText:[NSString stringWithFormat:@"%@ %@ - %@", [vehicleForRow brand], [vehicleForRow model], [vehicleForRow color]]];
+        [[cell textLabel] setText:[NSString stringWithFormat:@"%@ %@ - %@", [vehicleForRow brand], [vehicleForRow model], [VehicleColorsDataSource colorLocalizedNameForColorKeyName:[vehicleForRow color]]]];
         [[cell detailTextLabel] setTextColor:[UIColor louisLabelColor]];
         [[cell detailTextLabel] setText:[NSString stringWithFormat:@"%@",[vehicleForRow numberPlate]]];
         [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
@@ -148,7 +152,7 @@
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return ([userVehicles count] > 1);
+    return [userVehicles count] > 1;
 }
 
 
@@ -156,45 +160,22 @@
 {
     if (editingStyle == UITableViewCellEditingStyleDelete)
     {
-        deleteConfirmationAlert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Vehicle-Delete-Alert-Title", nil) message:NSLocalizedString(@"Vehicle-Delete-Alert-Message", nil) preferredStyle:UIAlertControllerStyleAlert];
-
-        UIAlertAction *actionNO = [UIAlertAction actionWithTitle:NSLocalizedString(@"Vehicle-Delete-Alert-Action-No", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action)
-        {
+        deleteConfirmationAlert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Vehicle-Delete-Alert-Title", nil)
+                                                                      message:NSLocalizedString(@"Vehicle-Delete-Alert-Message", nil)
+                                                               preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *actionNO = [UIAlertAction actionWithTitle:NSLocalizedString(@"Vehicle-Delete-Alert-Action-No", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
             [tableView setEditing:NO animated:YES];
         }];
-    
-        UIAlertAction *actionYES = [UIAlertAction actionWithTitle:NSLocalizedString(@"Vehicle-Delete-Alert-Action-Yes", nil) style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action)
-        {
-            
-            
+        UIAlertAction *actionYES = [UIAlertAction actionWithTitle:NSLocalizedString(@"Vehicle-Delete-Alert-Action-Yes", nil) style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
             [DataManager deleteVehicle:[userVehicles objectAtIndex:indexPath.row] withCompletionBlock:
-             ^(User *user, NSHTTPURLResponse *httpResponse, NSError *error)
-             {
-                 if (httpResponse.statusCode != 200)
-                 {
+             ^(User *user, NSHTTPURLResponse *httpResponse, NSError *error) {
+                 if (httpResponse.statusCode != 200) {
                      [HTTPResponseHandler handleHTTPResponse:httpResponse
                                                  withMessage:@""
                                                forController:self
-                                              withCompletion:^
-                      {
-                          nil;
-                      }];
-                 }
-                 else
-                 {
-                     dispatch_async(dispatch_get_main_queue(),
-                                    ^{
-                                        [[self tableView] beginUpdates];
-                                        [[self tableView] deleteRowsAtIndexPaths:@[indexPath]
-                                                                withRowAnimation:UITableViewRowAnimationLeft];
-                                        
-                                        NSMutableArray *userVehiclesMutable = [userVehicles mutableCopy];
-                                        [userVehiclesMutable removeObjectAtIndex:indexPath.row];
-                                        userVehicles = [userVehiclesMutable copy];
-                                        
-                                        [[self tableView] endUpdates];
-//                                        [[NSNotificationCenter defaultCenter] postNotificationName:@"vehiclesListUpdated" object:nil userInfo:@{@"updateType":@"DELETE", @"modifiedRowIndex":[NSString stringWithFormat:@"%ld", (long)indexPath.row]}];
-                                    });
+                                              withCompletion:nil];
+                 } else {
+                     [self modelListUpdatedForType:VehiclesModelUpdateTypeDelete atIndexPath:indexPath];
                  }
              }];
         }];
@@ -202,8 +183,7 @@
         [deleteConfirmationAlert addAction:actionNO];
         [deleteConfirmationAlert addAction:actionYES];
         
-        [self presentViewController:deleteConfirmationAlert animated:YES completion:
-         ^{
+        [self presentViewController:deleteConfirmationAlert animated:YES completion: ^{
              [GAI sendScreenViewWithName:@"Delete Car"];
         }];
         deleteConfirmationAlert = nil;
