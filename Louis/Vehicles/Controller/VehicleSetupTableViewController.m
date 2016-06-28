@@ -115,7 +115,6 @@ static NSString *kPickerCellID = @"vehicleSetupColorPickerCell";
 }
 
 
-
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -130,6 +129,7 @@ static NSString *kPickerCellID = @"vehicleSetupColorPickerCell";
     //  If view is in edition mode, values from vehicle are put in the text field
     if ([self isInEdition]) {
         [GAI sendScreenViewWithName:@"Edit Car"];
+        
         [self setTitle:[NSLocalizedString(@"Vehicle-Setup-View-Title-Edit", nil) uppercaseString]];
         
         if (_shouldShowDeleteButton) {
@@ -165,7 +165,6 @@ static NSString *kPickerCellID = @"vehicleSetupColorPickerCell";
         [[bigButtonView button] setEnabled:NO];
     }
 }
-
 
 
 - (void)viewDidAppear:(BOOL)animated
@@ -353,7 +352,6 @@ static NSString *kPickerCellID = @"vehicleSetupColorPickerCell";
         if (indexPath.row == VehicleSetupTableViewCellTypeColor) {
             [[self tableView] beginUpdates];
             [[self tableView] deselectRowAtIndexPath:indexPath animated:YES];
-            
             if ([self pickerIsShown]) {
                 [Tools rotateLayer:[[[[[self tableView] cellForRowAtIndexPath:indexPath] txtField] rightView] layer]
                 fromStartingDegree:M_PI
@@ -372,7 +370,6 @@ static NSString *kPickerCellID = @"vehicleSetupColorPickerCell";
                                  withRowAnimation:UITableViewRowAnimationMiddle];
 
             }
-            
             [tableView endUpdates];
         } else {
             VehicleSetupTableViewCell *cellSelected = [tableView cellForRowAtIndexPath:indexPath];

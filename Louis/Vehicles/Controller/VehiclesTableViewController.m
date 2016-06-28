@@ -55,7 +55,6 @@
 }
 
 
-
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -63,21 +62,17 @@
 }
 
 
-
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    
     [[[self tableView] cellForRowAtIndexPath:[[self tableView] indexPathForSelectedRow]] setSelected:NO animated:YES];
 }
-
 
 
 - (void)showAddButtonIfPossible
 {
     [[footerView button] setHidden:!([userVehicles count] < NB_MAX_VEHICLE)];
 }
-
 
 
 - (void)modelListUpdatedForType:(VehiclesModelUpdateType)updateType atIndexPath:(NSIndexPath *)indexUpdated
@@ -127,12 +122,10 @@
 }
 
 
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [userVehicles count];
 }
-
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -153,12 +146,10 @@
 }
 
 
-
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return ([userVehicles count] > 1);
 }
-
 
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
@@ -205,7 +196,6 @@
 //                                        [[NSNotificationCenter defaultCenter] postNotificationName:@"vehiclesListUpdated" object:nil userInfo:@{@"updateType":@"DELETE", @"modifiedRowIndex":[NSString stringWithFormat:@"%ld", (long)indexPath.row]}];
                                     });
                  }
-                 
              }];
         }];
         
@@ -221,18 +211,16 @@
 }
 
 
-
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
     return 0.01f;
 }
 
 
-
-- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
     return [[UIView alloc] initWithFrame:CGRectZero];
 }
-
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -241,12 +229,10 @@
 }
 
 
-
 - (void)addVehicleButtonTouched:(UIButton *)sender
 {
     [self showSetupViewControllerWithVehicleIndexPath:nil];
 }
-
 
 
 - (void)showSetupViewControllerWithVehicleIndexPath:(NSIndexPath *)vehicleToEditIndexPath
