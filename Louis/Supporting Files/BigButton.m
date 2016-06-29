@@ -111,7 +111,6 @@ typedef NS_ENUM(NSUInteger, BigButtonType)
                                                               multiplier:1.0
                                                                 constant:0.0]];
         }
-
     }
     
     return button;

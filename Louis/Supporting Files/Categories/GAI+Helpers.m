@@ -12,8 +12,7 @@
 
 +(void)sendScreenViewWithName:(NSString *)screenName
 {
-#ifdef DEBUG
-#else
+#ifndef DEBUG
     id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
     [tracker set:kGAIScreenName value:screenName];
     [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
@@ -23,8 +22,7 @@
 
 + (void)sendEvent:(GAIDictionaryBuilder *)event
 {
-#ifdef DEBUG
-#else
+#ifndef DEBUG
     id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
     [tracker send:[event build]];
 #endif

@@ -216,7 +216,7 @@ typedef NS_ENUM(NSUInteger, VehicleSetupTableViewSection)
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {    
-    return [self pickerIsShown] ? VehicleSetupTableViewCellNumberOfCells+1 : VehicleSetupTableViewCellNumberOfCells;
+    return VehicleSetupTableViewCellNumberOfCells + ([self pickerIsShown] ? 1 : 0);
 }
 
 

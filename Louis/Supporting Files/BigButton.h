@@ -18,7 +18,7 @@
  *
  *  Create and return a big button.
  *
- *  @param title    The button title.
+ *  @param title The button title.
  *
  *  @return The big button created.
  */
@@ -30,8 +30,8 @@
  *
  *  Create and return a big button.
  *
- *  @param title     The button title.
- *  @param image     Image to place in the button (on the left)
+ *  @param title The button title.
+ *  @param image Image to place in the button (on the left)
  *
  *  @return The big button created.
  */
