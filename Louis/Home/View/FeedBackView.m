@@ -272,7 +272,7 @@ static UIImage *starFull;
                                                                      metrics:metrics
                                                                        views:views]];
 
-        [_feedBackPopUpView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-topPadding-[headerPart]-8-[pricePart]-8-[valetsPart][commentPart][footerPart]-bottomPadding-|"
+        [_feedBackPopUpView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-topPadding-[headerPart]-16-[pricePart]-8-[valetsPart][commentPart][footerPart]-bottomPadding-|"
                                                                      options:0
                                                                      metrics:metrics
                                                                        views:views]];
