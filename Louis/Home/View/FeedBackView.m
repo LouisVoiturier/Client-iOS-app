@@ -262,7 +262,7 @@ static UIImage *starFull;
                                                                      metrics:metrics
                                                                        views:views]];
         
-        [_feedBackPopUpView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-horizontalPadding-[commentPart]-horizontalPadding-|"
+        [_feedBackPopUpView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[commentPart]|"
                                                                      options:0
                                                                      metrics:metrics
                                                                        views:views]];
@@ -465,24 +465,42 @@ static UIImage *starFull;
         [commentTextView setDelegate:_delegate];
         [commentTextView setTextColor:[UIColor louisLabelColor]];
         [commentTextView setFont:[UIFont louisLabelFont]];
-        [[commentTextView layer] setFrame:CGRectMake(0.0f, self.frame.size.height, self.frame.size.width, 1.0f)];
-        [[commentTextView layer] setBackgroundColor:[[UIColor blackColor] CGColor]];
+        [commentTextView setTintColor:[UIColor louisPlaceholderColor]];
         [commentTextView setTranslatesAutoresizingMaskIntoConstraints:NO];
-        
+        [commentTextView setTextContainerInset:UIEdgeInsetsMake(3, 5, 3, 5)];
         [commentPart addSubview:commentTextView];
         
-        views   = NSDictionaryOfVariableBindings(commentTextView);
+        UIView *topBorder = [[UIView alloc] init];
+        [topBorder setBackgroundColor:[UIColor louisBackgroundApp]];
+        [topBorder setTranslatesAutoresizingMaskIntoConstraints:NO];
+        [commentPart addSubview:topBorder];
+        
+        UIView *bottomBorder = [[UIView alloc] init];
+        [bottomBorder setBackgroundColor:[UIColor louisBackgroundApp]];
+        [bottomBorder setTranslatesAutoresizingMaskIntoConstraints:NO];
+        [commentPart addSubview:bottomBorder];
+        
+        views = NSDictionaryOfVariableBindings(commentTextView, topBorder, bottomBorder);
+        
+        [commentPart addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[topBorder]|"
+                                                                            options:0
+                                                                            metrics:nil
+                                                                              views:views]];
         
         [commentPart addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[commentTextView]|"
                                                                            options:0
                                                                            metrics:nil
                                                                              views:views]];
         
-        [commentPart addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-5-[commentTextView(25)]-5-|"
+        [commentPart addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[bottomBorder]|"
+                                                                            options:0
+                                                                            metrics:nil
+                                                                              views:views]];
+        
+        [commentPart addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-5-[topBorder(==1)][commentTextView(25)][bottomBorder(==1)]-5-|"
                                                                            options:0
                                                                            metrics:nil
                                                                              views:views]];
-        
         
         #pragma mark - Footer Part
         // ********************************* //
