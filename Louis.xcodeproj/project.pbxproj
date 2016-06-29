@@ -53,6 +53,7 @@
 		520498001BB430C500445C90 /* LouisTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 520497FF1BB430C500445C90 /* LouisTests.m */; };
 		5204980B1BB430C500445C90 /* LouisUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5204980A1BB430C500445C90 /* LouisUITests.m */; };
 		52149BCA1BF406750017A2C8 /* STPCard+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 52149BC91BF406750017A2C8 /* STPCard+Helper.m */; };
+		523DF9711D2195CE00DA0DD5 /* PlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 523DF9701D2195CE00DA0DD5 /* PlaceholderTextView.m */; };
 		523F47901BCBB3BA002D0BB7 /* DataManager+User_Vehicles.m in Sources */ = {isa = PBXBuildFile; fileRef = 523F478F1BCBB3BA002D0BB7 /* DataManager+User_Vehicles.m */; };
 		524259831BBEE6D000D8F7C2 /* MenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5242596D1BBEE6D000D8F7C2 /* MenuTableViewController.m */; };
 		524259841BBEE6D000D8F7C2 /* SignInTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 524259701BBEE6D000D8F7C2 /* SignInTableTableViewController.m */; };
@@ -65,7 +66,6 @@
 		5242598B1BBEE6D000D8F7C2 /* SignUpProfileTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 524259801BBEE6D000D8F7C2 /* SignUpProfileTableViewCell.m */; };
 		5242598C1BBEE6D000D8F7C2 /* SignUpTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 524259821BBEE6D000D8F7C2 /* SignUpTableViewCell.m */; };
 		524849901BD4F3EA00E244D1 /* FeedBackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5248498F1BD4F3EA00E244D1 /* FeedBackView.m */; };
-		524849931BD5408A00E244D1 /* UIPlaceHolderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 524849921BD5408A00E244D1 /* UIPlaceHolderTextView.m */; };
 		524A4E631BC51AB8005499DB /* Vehicles.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 524A4E621BC51AB8005499DB /* Vehicles.storyboard */; };
 		524CAB701BB58FFA006DA243 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 524CAB6F1BB58FFA006DA243 /* User.m */; };
 		524CAB731BB59021006DA243 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 524CAB721BB59021006DA243 /* Person.m */; };
@@ -227,6 +227,8 @@
 		5204980C1BB430C500445C90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52149BC81BF406750017A2C8 /* STPCard+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "STPCard+Helper.h"; sourceTree = "<group>"; };
 		52149BC91BF406750017A2C8 /* STPCard+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "STPCard+Helper.m"; sourceTree = "<group>"; };
+		523DF96F1D2195CE00DA0DD5 /* PlaceholderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlaceholderTextView.h; path = "Supporting Files/PlaceholderTextView.h"; sourceTree = "<group>"; };
+		523DF9701D2195CE00DA0DD5 /* PlaceholderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlaceholderTextView.m; path = "Supporting Files/PlaceholderTextView.m"; sourceTree = "<group>"; };
 		523F478E1BCBB3BA002D0BB7 /* DataManager+User_Vehicles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = "DataManager+User_Vehicles.h"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		523F478F1BCBB3BA002D0BB7 /* DataManager+User_Vehicles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = "DataManager+User_Vehicles.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		5242596C1BBEE6D000D8F7C2 /* MenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MenuTableViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -250,8 +252,6 @@
 		524259821BBEE6D000D8F7C2 /* SignUpTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SignUpTableViewCell.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		5248498E1BD4F3EA00E244D1 /* FeedBackView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedBackView.h; sourceTree = "<group>"; };
 		5248498F1BD4F3EA00E244D1 /* FeedBackView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedBackView.m; sourceTree = "<group>"; };
-		524849911BD5408A00E244D1 /* UIPlaceHolderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIPlaceHolderTextView.h; path = "Supporting Files/UIPlaceHolderTextView.h"; sourceTree = "<group>"; };
-		524849921BD5408A00E244D1 /* UIPlaceHolderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIPlaceHolderTextView.m; path = "Supporting Files/UIPlaceHolderTextView.m"; sourceTree = "<group>"; };
 		524A4E621BC51AB8005499DB /* Vehicles.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Vehicles.storyboard; sourceTree = "<group>"; };
 		524CAB6E1BB58FFA006DA243 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = User.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		524CAB6F1BB58FFA006DA243 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
@@ -511,8 +511,6 @@
 				AA4EB5B01BB44D6B003BA297 /* Libs */,
 				AA4EB5A91BB44757003BA297 /* Frameworks */,
 				520497E51BB430C500445C90 /* Supporting Files */,
-				524849911BD5408A00E244D1 /* UIPlaceHolderTextView.h */,
-				524849921BD5408A00E244D1 /* UIPlaceHolderTextView.m */,
 				AA6F10891BB5304200121AC3 /* Ressources */,
 			);
 			path = Louis;
@@ -530,6 +528,8 @@
 				527941301BBA987B0058E623 /* Common.h */,
 				529DCB7C1BC84BDC0072F020 /* Categories */,
 				529DCB7B1BC84BD30072F020 /* BigButton */,
+				523DF96F1D2195CE00DA0DD5 /* PlaceholderTextView.h */,
+				523DF9701D2195CE00DA0DD5 /* PlaceholderTextView.m */,
 				422B696A1BE0D24C00F45AEC /* Tools.h */,
 				422B696B1BE0D24C00F45AEC /* Tools.m */,
 				422B696D1BE3636C00F45AEC /* HTTPResponseHandler.h */,
@@ -664,10 +664,10 @@
 		529DCB7B1BC84BD30072F020 /* BigButton */ = {
 			isa = PBXGroup;
 			children = (
-				42EE399F1BBA9876006E761D /* BigButtonView.h */,
-				42EE39A01BBA9876006E761D /* BigButtonView.m */,
 				52F957AD1BBD796F00804E83 /* BigButton.h */,
 				52F957AE1BBD796F00804E83 /* BigButton.m */,
+				42EE399F1BBA9876006E761D /* BigButtonView.h */,
+				42EE39A01BBA9876006E761D /* BigButtonView.m */,
 			);
 			name = BigButton;
 			sourceTree = "<group>";
@@ -1336,7 +1336,6 @@
 				422B69631BDE352000F45AEC /* Price.m in Sources */,
 				4275D5161BBC198500356B39 /* CreditCardTableViewCell.m in Sources */,
 				4273AB451BC27EA800D3DE65 /* SearchView.m in Sources */,
-				524849931BD5408A00E244D1 /* UIPlaceHolderTextView.m in Sources */,
 				AA3315DB1BCA69D1008A8679 /* GeolocForbiddenViewController.m in Sources */,
 				524849901BD4F3EA00E244D1 /* FeedBackView.m in Sources */,
 				5284AFC01BCED12100107F40 /* UIViewController+RevealViewController.m in Sources */,
@@ -1349,6 +1348,7 @@
 				5242598A1BBEE6D000D8F7C2 /* SigneInTableViewCell.m in Sources */,
 				4273AB9C1BC7CD5200D3DE65 /* BookInfoTableViewController.m in Sources */,
 				527E5AE21BD693D200831ADA /* Checkin.m in Sources */,
+				523DF9711D2195CE00DA0DD5 /* PlaceholderTextView.m in Sources */,
 				4218BA561BD91CDD00670DFD /* LocationArrowView.m in Sources */,
 				AA4EB5F11BB4507C003BA297 /* PaymentTableViewController.m in Sources */,
 				AA6F10941BB5357000121AC3 /* UIColor+Louis.m in Sources */,

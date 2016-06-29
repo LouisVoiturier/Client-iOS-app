@@ -16,7 +16,7 @@
 // ===== Custom Views ===== //
 #import "BigButton.h"
 #import "BigButtonView.h"
-#import "UIPlaceHolderTextView.h"
+#import "PlaceHolderTextView.h"
 
 // ===== View Controllers ===== //
 #import "UIViewController+RevealViewController.h"

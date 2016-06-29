@@ -459,7 +459,7 @@ static UIImage *starFull;
         // ---------- Comment Part ---------- //
         // ********************************** //
         
-        UIPlaceHolderTextView *commentTextView = [[UIPlaceHolderTextView alloc] init];
+        PlaceholderTextView *commentTextView = [[PlaceholderTextView alloc] init];
         [commentTextView setPlaceholder:NSLocalizedString(@"FeedBackView-Comment-Placeholder", nil)];
         [commentTextView setPlaceholderColor:[UIColor louisPlaceholderColor]];
         [commentTextView setDelegate:_delegate];
